@@ -6,6 +6,8 @@ START
 
 Class의 변수명은 항상 대문자로 시작
 
-sudo rm /usr/bin/java
 
-sudo ln -s /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/bin/java /usr/bin/java
+
+Eclipse 삽질했다.
+
+Package명을 꼭 작성하고 시작할 것.
