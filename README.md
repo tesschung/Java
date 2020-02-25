@@ -1,4 +1,24 @@
-START
+**"한 번만 작성하면, 어디서든 동작한다. (Write Once, Run Anywhere.)"**
+
+
+
+'`자바 가상머신`'이라는 것만 설치되면, 어느 운영체제이든, 어느 디바이스이든, 동일하게 동작합니다. (자바 가상머신, Java Virtual Machine,  **JVM**)
+
+**JRE** (Java Runtime Environment) JVM을 사용해서 마음껏 개발할 수 있는 환경
+
+내 컴퓨터에 이런 환경을 만들기 위해서는 **JDK** (Java Development Kit) 라는 것을 설치
+
+**객체 지향 프로그래밍 (Object Oriented Programming, OOP)**은 프로그램을 작성하는 기법
+
+- 부품에 해당하는 객체 (Object)를 먼저 만들고, 이것들을 하나씩 조립 및 연결해서 전체 프로그램을 완성하는 기법
+
+
+
+
+
+
+
+
 
 
 
