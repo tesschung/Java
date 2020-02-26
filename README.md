@@ -14,14 +14,6 @@
 
 
 
-
-
-
-
-
-
-
-
 `Java project` 생성 -> `Class` 생성 순
 
 Class의 변수명은 항상 대문자로 시작
@@ -67,4 +59,40 @@ Package명을 꼭 작성하고 시작할 것.
 원본 문자열과 매개 값으로 주어진 비교 문자열이 동일한지 비교한 후 true 또는 false를 리턴한다. (즉, 객체가 참조하고 있는 주소값과는 상관없이 변수가 담고있는 값만을 비교한다.)
 
 
+
+- `sout` == System.out.println()
+
+
+
+- 표현할 수 있는 범위에 따라 정해짐
+  - 뒤로갈 수록 표현할 수 있는 범위가 작다
+
+`double` - `float` - `long` - `int` - `short` - `byte`
+
+
+
+
+
+```java
+int i = 10;
+if (i % 3 == 0) { // i < 20 : 불린 식, 변수, 메소드
+    System.out.println("C 구역입니다.");
+} else if (1 % 3 == 1) {
+    System.out.println("A 구역입니다.");
+} else {
+    System.out.println("B 구역입니다.");
+}
+
+switch (i % 3) { // i : 불린이 아닌 식, 변수, 메소드
+    case 0:
+        System.out.println("C 구역입니다.");
+        break;
+    case 1:
+        System.out.println("A 구역입니다.");
+        break;
+    default:
+        System.out.println("B 구역입니다.");
+        break;
+}
+```
 

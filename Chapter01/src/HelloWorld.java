@@ -18,5 +18,6 @@ public class HelloWorld { // HelloWorld라는 이름의 공개된 클래스를 �
       // 마지막에는 엔터를 치듯이 다음 줄로 넘겨준다.
       System.out.println("Hello World");
       System.out.print("Hello World");
+      //sout이라고 치면 쉽게 작성가능하다.
   }
 }
