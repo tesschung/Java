@@ -12,19 +12,29 @@ public class Person {
     // 생성자의 파라미터로 속성을 받아 각 인스턴스에 지정
     public Person(String name, int age, int cashAmount) {
         this.name = name;
-        this.age = age;
-        this.cashAmount = Math.max(cashAmount, 0);
-    }
-
-    // 생성자도 메소드 오버로딩이 가능하다
-    public Person(String name, int age) {
         if (age < 0) {
             this.age = 12;
         } else {
             this.age = age;
         }
-        this.name = name;
-        this.cashAmount = 0;
+        this.cashAmount = Math.max(cashAmount, 0);
+    }
+
+    // 생성자도 메소드 오버로딩이 가능하다
+    // 파라미터가 가장 많은 생성자를 적은 쪽에서 호출하는 것이 효율적이다.
+    public Person(String name, int age) {
+//        if (age < 0) {
+//            this.age = 12;
+//        } else {
+//            this.age = age;
+//        }
+//        this.name = name;
+//        this.cashAmount = 0;
+        this(name, age, 0);
+    }
+
+    public Person(String name) {
+        this(name, 12, 0); // 12살을 기본 나이로 설정, 초기 현금 보유액은 0원.
     }
 
     public void setAge(int newAge) {

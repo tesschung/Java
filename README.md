@@ -129,3 +129,37 @@ char[] charArray = dna.toCharArray();
   - Person - 김신의, 문종모, 성태호
 
   
+
+- 기본형 **Primitive Type** VS 참조형 **Reference Type**
+  - 기본형 **Primitive Type**
+
+    - Int, boolean, char, double
+    - 변수가 그 값을 직접적으로 보관
+
+  - 참조형 **Reference Type** // 배열을 포함한 객체
+
+    - Person, String, int[]
+    - 실제 값은 메모리에 저장, 변수는 그 영역을 가르킨다.
+
+    - null은 참조형 변수만 가질 수 있는 값이다.
+
+      - `null`을 보관하고 있는 변수의 메소드를 호출하려고 하면 `NullPointerException`이라는 오류가 난다.
+
+      ```java
+      Person[] people = new Person[5];
+      people[0] = new Person("김신의", 28);
+      people[2] = new Person("문종모", 26);
+      people[3] = new Person("서혜린", 21);
+      
+      for (int i = 0; i < people.length; i++) {
+          Person p = people[i];
+          if (p != null) {
+              System.out.println(p.getName());
+          } else {
+              System.out.println(i + "번 자리는 비었습니다.");
+          }
+      }
+      ```
+
+- 
+
