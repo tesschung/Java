@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee869ffe-6dc4-47b3-94ef-621eaf89b270" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AverageFinder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GreatestDifferenceFinder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MarketDriver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MarketGood.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ScannerInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ShapePrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBasic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBasic.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lesson01/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lesson01/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lesson01/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lesson01/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lesson01/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lesson01/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lesson01/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lesson01/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lesson01/Lesson01.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lesson01/src/Package01/Code01.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lesson01/src/module-info.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582772566365</updated>
-      <workItem from="1582772567630" duration="10604000" />
+      <workItem from="1582772567630" duration="11299000" />
     </task>
     <servers />
   </component>
