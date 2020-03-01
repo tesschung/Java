@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ee869ffe-6dc4-47b3-94ef-621eaf89b270" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Array.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Array.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +40,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Application.ScannerInput">
+  <component name="RunManager" selected="Application.Array">
     <configuration name="Array" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Array" />
       <module name="JavaBasic" />
@@ -70,10 +71,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Array" />
         <item itemvalue="Application.ScannerInput" />
         <item itemvalue="Application.Calculator" />
         <item itemvalue="Application.MarketDriver" />
-        <item itemvalue="Application.Array" />
       </list>
     </recent_temporary>
   </component>
@@ -88,6 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582772566365</updated>
       <workItem from="1582772567630" duration="11299000" />
+      <workItem from="1583059504203" duration="356000" />
     </task>
     <servers />
   </component>
@@ -111,6 +113,10 @@
       <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state width="772" height="208" key="GridCell.Tab.0.right/0.23.1440.830@0.23.1440.830" timestamp="1582797560957" />
+    <state x="442" y="279" key="com.intellij.ide.util.TipDialog" timestamp="1583059511452">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="442" y="279" key="com.intellij.ide.util.TipDialog/0.23.1440.830@0.23.1440.830" timestamp="1583059511452" />
     <state x="788" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582775877381">
       <screen x="0" y="23" width="1440" height="830" />
     </state>

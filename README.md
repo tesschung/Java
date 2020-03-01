@@ -161,9 +161,120 @@ char[] charArray = dna.toCharArray();
       }
       ```
 
-- 
+- Short-Circuit Evaluation 
+
+  - And 연산 &&
+
+    ```java
+    boolean newBoolean = m1() && m2() && m3();
+    ```
+
+    `newBoolean`이 `true`가 되기 위해서는 `m1()`, `m2()`, `m3()`가 모두 `true`를 리턴
+
+    따라서 `m1()`이 `false`를 리턴하면 `m2()`와 `m3()`의 결과와 상관 없이 `newBoolean`은 `false`
+
+    실제로 자바는 효율성을 위해서 `m1()`이 `false`를 리턴하면 `m2()`와 `m3()`를 실행하지 않는다. 
+
+    이렇게 식의 결과값이 이미 결정된 경우 미리 멈추는 것을 **'숏서킷 연산(Short-circuit evaluation)'**.
+
+    
+
+  - Or 연산 ||
+
+    ```java
+    boolean newBoolean = m1() || m2() || m3();
+    ```
+
+    `newBoolean`이 `false`이기 위해서는 `m1()`, `m2()`, `m3()`의 리턴값이 모두 `false`이어야한다. 
+
+    따라서 `m1()`이 `true`를 리턴하면 `m2()`와 `m3()`는 실행되지 않고 `newBoolean`은 `true`가 된다.
+
+
+
+- 기본형 참조형
+  - 2
+  - 4
+  - [person, null] [26, 0]. 1
+  - [27,0] [person, person] [28,0] 3
+
+
+
+-  `"".isEmpty()`의 결과값은 `true`이고 `"abc".isEmpty()`의 결과값은 `false`
+
+- null 퀴즈
+
+  - 3
+
+  - `s`는 `null`이기 때문에, `if`문의 첫 번째 조건`s != null`의 값은 `false`입니다.
+  
+    앞쪽 메소드가 `false`를 리턴하면 뒤쪽 메소드도 실행됩니다. 그런데 `s`가 `null`인 상황에서 `s.isEmpty()`는 `NullPointerException` 에러
+    
+  - - ```java
+    String s = null;
+      // s.isEmpty() => true 
+      // => !true -> false
+      if (s != null || !s.isEmpty()) {
+          System.out.println("Answer A");
+      } else {
+          System.out.println("Answer B");
+      }	
+      ```
+      
+
+  -  
+  
+    - 2
+  
+    - if문의 첫 번째 조건부터 봅시다. `str != null`은 원소가 `null`인지 체크하는 조건
+  
+    -  `null`이 아니라면 `true`를 리턴
+  
+      두 번째 조건`!str.isEmpty()`은 문자열 `str`이 빈 문자열인지 확인합니다. `strings[2].isEmpty()`의 경우 `true`를 리턴하겠죠.
+  
+      그런데, 두 조건이 and 연산(`&&`)으로 연결
+  
+      숏서킷 연산에 의해 첫 번째 조건이 `true`인 경우, 즉 `str`이 `null`이 아닌 경우에만 두 번째 조건을 수행
+    
+    그렇기 때문에 앞 문제에서처럼 `NullPointerException`은 발생하지 않는다.
+      
+    자, 두 조건문을 연결해서 생각해보면, 이 if문은:
+      
+      1. `str`이 `null`이 아니면서 빈 문자열도 아닐 경우 `countA`를 하나 증가
+      2. `str`이 `null`이거나 빈 문자열(`""`)인 경우 `countB`를 하나 증가
+      
+      그러므로 `null`인 `strings[1]`, `strings[3]`의 경우, 그리고 빈 문자열인 `strings[2]`의 경우 `countB`가 증가 되어, 최종적으로 `3`이 출력
+
+
+```java
+String[] strings = new String[5];
+// [null, null, null, null, null]
+
+strings[0] = "Hello";
+strings[2] = "";
+strings[4] = "Java";
+// ["Hello", null, "", null, "Java"]
+
+// 2, 3
+int countA = 0, countB = 0;
+for (String str : strings) {
+    if (str != null && !str.isEmpty()) {
+        countA++;
+    } else {
+        countB++;
+    }
+}
+System.out.println(countB);
+```
 
 
 
 
+
+- final
+  - 변수를 정의할 때 `final`을 써주면, 그 변수는 '상수'가 된다. 즉, 한 번 정의하고 나서 다시 바꿀 수 없다는 것
+
+```java
+final double pi = 3.141592;
+pi = 2.54; // java: cannot assign a value to final variable name
+```
 

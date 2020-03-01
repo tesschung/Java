@@ -3,6 +3,10 @@ import java.util.Arrays;
 public class Array {
     public static void main(String[] args) {
         // 배열로 값을 여러개 묶어서 저장
+
+        String[] strings = new String[5];
+        System.out.println(Arrays.toString(strings));
+
         int[] intArray = new int[5];
         System.out.println(Arrays.toString(intArray));
         intArray[0] = 2;
@@ -15,7 +19,6 @@ public class Array {
         for (int i = 0; i < intArray.length; i++){
             System.out.println(intArray[i]);
         }
-
 
         int[] arr1 = {1, 2, 3, 4, 5};
 
