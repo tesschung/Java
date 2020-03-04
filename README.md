@@ -297,7 +297,6 @@ pi = 2.54; // java: cannot assign a value to final variable name
     }
     ```
     
-  
   - ```java
     int[] smallArray = new int[3];
     
@@ -320,6 +319,159 @@ pi = 2.54; // java: cannot assign a value to final variable name
 
 
 - 인스턴스 변수 vs 클래스 변수
+
+  - 인스턴스 변수 버전
+
+    - ```java
+      public class Person {
+          int count;
+      }
+      ```
+
+    - Person 클래스에 count라는 인스턴스 변수가 있다. 해당 변수는 총 몇개의 Person 인스턴스가 있는지 보관한다.
+
+    - ```java
+      public static void main(String[] args) {
+          Person p1 = new Person();
+          p1.count++; 
+      
+          Person p2 = new Person();
+          p1.count++;
+          p2.count = p1.count;
+      
+          Person p3 = new Person();
+          p1.count++;
+          p2.count++;
+          p3.count = p2.count;
+      
+          Person p4 = new Person();
+          p1.count++;
+          p2.count++;
+          p3.count++;
+          p4.count = p3.count;
+      
+          System.out.println(p1.count); // 4
+          System.out.println(p2.count); // 4
+          System.out.println(p3.count); // 4
+          System.out.println(p4.count); // 4 
+      ```
+
+    - 이 경우 새로운 Person 인스턴스를 생성할때마다 각 count 변수를 바꿔줘야 올바른 값이 나온다.
+
+  - 클래스 변수 버전
+
+    - 클래스 변수를 정의하기 위해 `static`이라는 키워드를 붙여준다.
+
+    - ```java
+      public class Person {
+          static int count;
+      }
+      ```
+
+    - 이렇게 `static`으로 해두면 count는 특정 인스턴스에만 해당되는 것이 아니라 Person 클래스 전체에 해당된다. 따라서 count를 부를때는 `클래스이름.count`로 부른다.
+
+
+```java
+public static void main(String[] args) {
+    Person p1 = new Person();
+    Person.count++;
+
+    Person p2 = new Person();
+    Person.count++;
+
+    Person p3 = new Person();
+    Person.count++;
+
+    Person p4 = new Person();
+    Person.count++;
+
+    System.out.println(Person.count); // 4
+}
+```
+
+- 하지만, Person.count를 매번 선언해줘여 한다는 단점, 그래서 생성을 할때 내부적으로 	count가 가능하게 하면 더욱 깔끔한 코드를 작성할 수 있다.
+
+  - ```java
+    public class Person {
+        static int count;
+    
+        public Person() {
+            count++;
+        }
+    }
+    ```
+
+  - ```java
+    public static void main(String[] args) {
+        Person p1 = new Person();
+        Person p2 = new Person();
+        Person p3 = new Person();
+        Person p4 = new Person();
+    
+        System.out.println(Person.count);
+    }
+    ```
+
+
+
+
+
+- 상수
+  - 좀 더 상수를 상수답게 사용하기
+    - public `static` `final` double PI = 3.141592653589793;
+    - static과 final를 함께 써야한다. 왜냐하면 상수는 인스턴트에만 해당하는 것이 아니고 여러 복사본 대신 한 값만 저장해두는 것이 맞기 때문이다.
+    - 상수이름은 보통 `대문자`로 작성, 단어가 여러개인 경우`_`로 구분 짓는다.
+
+
+
+- 클래스 메소드
+
+  - `클래스 변수`는 `클래스에 속한 변수`
+
+  - `클래스 메소드`는 `클래스에 속한 메소드`
+
+    - 인스턴스 메소드는 인스턴스에 속해있어서 인스턴스를 반드시 생성해야 사용할 수 있지만, 클래스 메소드는 클래스에 속한 것이므로 인스턴스를 생성하지 않고 사용할 수 있다.
+
+    ```java
+    import java.lang.Math;
+    
+    public class Driver {
+        public static void main(String[] args) {
+            System.out.println(Math.abs(-10));   // 절댓값
+            System.out.println(Math.max(3, 7));  // 두 값 중 최댓값
+            System.out.println(Math.random());   // 0.0과 1.0 사이의 랜덤값
+        }
+    }
+    ```
+
+    Math 클래스에서 바로 메소드를 사용하는 경우를 확인할 수 있다.
+
+```java
+public class Counter {
+    static int count;
+
+    public static void increment() {
+        count++;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Counter.count); // 0
+
+        Counter.increment();
+        System.out.println(Counter.count); // 1
+
+        Counter.increment();
+        System.out.println(Counter.count); // 2
+
+        Counter.increment();
+        System.out.println(Counter.count); // 3
+    }
+}
+```
+
+
+
+
 
 
 
