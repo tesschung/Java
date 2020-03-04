@@ -1,6 +1,7 @@
 public class MarketGood {
-    private String name; // 상품의 이름
-    private int retailPrice; // 상품의 출시 가격
+    // 변동될 일이 없는 정보이므로 final로 설정한다.
+    public final String name; // 상품의 이름 // final
+    public final int retailPrice; // 상품의 출시 가격 // final
     private int discountRate; // 상품의 할인율 단위 %
 
     public MarketGood(String name, int retailPrice, int discountRate) {
@@ -16,17 +17,6 @@ public class MarketGood {
     public MarketGood(String name, int retailPrice) {
         this(name, retailPrice, 0);
     }
-
-
-    public String getName(){
-        return this.name;
-    }
-
-
-    public int getRetailPrice(){
-        return this.retailPrice;
-    }
-
 
     // discountRate는 변동이 있을 수 있으므로 setter & getter 모두 생성
     public int getDiscountRate(){

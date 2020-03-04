@@ -274,7 +274,7 @@ System.out.println(countB);
 
 
 
-- final
+- `final` // 변수 안전하게 만들기
   - 변수를 정의할 때 `final`을 써주면, 그 변수는 '상수'가 된다. 즉, 한 번 정의하고 나서 다시 바꿀 수 없다는 것
 
 ```java
@@ -284,6 +284,42 @@ pi = 2.54; // java: cannot assign a value to final variable name
 
 
 
+
+
+- 코드안전하게 만들기 try-catch 예외처리
+
+  - ```java
+    try {
+      // 오류를 발생시킬 수 있는 코드
+    } catch (Exception e) {
+      // 오류가 발생한 경우 해결
+      System.out.println(e.getMessage());
+    }
+    ```
+    
+  
+  - ```java
+    int[] smallArray = new int[3];
+    
+    for (int i=0; i <10; i++) {
+      try {
+        smallArray[i] = i;
+      } catch (ArrayIndexOutOfBoundsException e) {
+        System.out.println(e.getMessage());
+      }
+    }
+    
+    // 결과확인
+    for (int i:smallArray) {
+      System.out.println(i);
+    }
+    ```
+  
+  - 예외처리를 하여 프로그램이 죽지않고 예외부분은 메세지로, 그리고 그 외에 처리된 부분은 정상적으로 처리된 것을 확인 할 수 있다.
+
+
+
+- 인스턴스 변수 vs 클래스 변수
 
 
 
@@ -398,7 +434,9 @@ https://gmlwjd9405.github.io/2017/10/01/basic-concepts-of-development-java.html
 #### java의 final 키워드 (final/finally/finalize)
 
 ```
-
+final 상수고정
+finally 
+finalize 
 
 ```
 
