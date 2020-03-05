@@ -471,6 +471,92 @@ public class Counter {
 
 
 
+- String 클래스
+
+  - ```java
+    String myString = "aBc";
+    System.out.println(myString.toUpperCase()) // 모두 대문자로
+    System.out.println(myString.toLowerCase()) // 모두 소문자로
+    System.out.println(myString)               // 그대로
+    ```
+
+```java
+String myString = "aBc";
+System.out.println(myString.toLowerCase() == "abc");
+// false
+```
+
+```java
+String myString = "aBc";
+System.out.println(myString.toLowerCase().equals("abc"));
+// true
+```
+
+
+
+- Math 클래스
+
+```java
+import java.lang.Math;
+
+public class Driver {
+    public static void main(String[] args) {
+        System.out.println(Math.abs(-10)); // 10
+        System.out.println(Math.abs(8)); // 8
+      
+        System.out.println(Math.min(4, 10));  // 최솟값 4
+        System.out.println(Math.max(4, 10));  // 최댓값 10
+    }
+}
+```
+
+
+
+- Random 클래스
+
+```java
+import java.util.Random;
+
+public class Driver {
+    public static void main(String[] args) {
+        Random rand = new Random();
+        System.out.println(rand.nextInt(10));   // 0 이상 9 이하의 랜덤한 값
+      
+      	// Random rand = new Random();
+        int min = 10;
+        int max = 30;
+
+        System.out.println(rand.nextInt((max - min) + 1) + min);   // 10 이상 30 이하의 랜덤한 값
+    }
+}
+```
+
+
+
+- Wrapper 클래스
+  - 기본 자료형을 객체 형식으로 감싸는 역할
+    
+    - `Integer` 클래스는 `int`형을, `Double` 클래스는 `double`을, `Long` 클래스는 `long`을, `Boolean` 클래스는 `boolean`을 감싸는 것
+    
+  - 이러한 Wrapper 클래스가 필요한 이유는 기본형 자료형을 참조형처럼 다뤄야 할 경우가 있을때다.
+  
+  - ```java
+    Integer i = new Integer(123);
+    Integer i = 123;
+    ```
+
+```java
+System.out.println(123 == 123);
+System.out.println(new Integer(123) == new Integer(123));
+// true
+// false
+```
+
+```java
+System.out.println(new Integer(123).equals(new Integer(123)));
+// true
+```
+
 
 
 
