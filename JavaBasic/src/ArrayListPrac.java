@@ -14,7 +14,7 @@ public class ArrayListPrac {
 
         System.out.println(nameList.size());
         System.out.println(nameList);
-        
+
 /**/
         ArrayList<Integer> numList = new ArrayList<>();
         numList.add(1);
@@ -23,5 +23,8 @@ public class ArrayListPrac {
 
         System.out.println(numList);
 
+        for (int num:numList) {
+            System.out.println(num * num);
+        }
     }
 }
