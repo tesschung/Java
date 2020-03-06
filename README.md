@@ -561,6 +561,48 @@ System.out.println(new Integer(123).equals(new Integer(123)));
 
 
 
+- HashMap
+
+```java
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class HashMapPrac {
+    public static void main(String[] args) {
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("이상해");
+
+        // HashMap
+        // Key -> Value
+
+        HashMap<String, String> pokedex = new HashMap<String, String>();
+        pokedex.put("피카츄","피카츄");
+        pokedex.put("라이츄", "라이츄");
+
+        pokedex.remove("이상해풀");
+
+        // 찾고자 하는 value에 해당하는 key를 파라미터로 넘겨준다.
+        String poke003 = pokedex.get("이상해꽃");
+
+        // 같은 key에 여러 value를 저장하면 가장 마지막에 저장된 value로 덮어씌워진다.
+        pokedex.put("피카츄", "피카츄3");
+
+        for (String key:pokedex.keySet()) {
+            System.out.println(key + pokedex);
+        }
+
+    }
+}
+```
+
+- HashMap의 key는 'hashcode'라는 것으로 관리된다.
+  - 이 `hashcode`는 모든 클래스의 인스턴스가 가진 고유한 값인데, 인스턴스마다 다르기 때문에 HashMap이 key를 구분하는 값으로 사용된다.
+  - 여러 인스턴스가 같은 hashcode를 가질 수 있으며, 이 경우 HashMap에선 key.equals(anotherKey)메소드로 구분
+  - 그런데 `String`은 서로 다른 인스턴스라도 안의 내용이 같으면 같은 hashcode를 갖는다. 그렇기 때문에 `HashMap`의 key로서 `String`이 매우 적합 
+  - Key는 실제 인스턴스보다는 안에 담긴 의미, 내용으로 구분하는 것이 좋기 때문
+
+
+
 
 
 

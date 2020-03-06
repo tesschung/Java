@@ -27,7 +27,9 @@ public class ArrayListExam {
 //            System.out.println(willKilled.size());
 //            System.out.println(willKilled);
             // 사이즈가 11일때, 11인덱스인 경우, 인덱스는 0~10까지이므로 같거나 클때로 조건을 달리해야 한다.
+
             if (killIndex >= willKilled.size()) {
+            // 인덱스를 초과하는 경우 나머지로 초기화 해준다.
                 killIndex = killIndex%willKilled.size();
 //                System.out.println("--?");
             }
