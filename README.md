@@ -603,6 +603,114 @@ public class HashMapPrac {
 
 
 
+- 상속 `extends`
+  - 잔액이라는 속성과 입금기능은 셋다 가지고 있음
+  - 출금 또한. 하지만 하나는 다르다.
+
+![image-20200306223209776](README.assets/image-20200306223209776.png)
+
+
+
+
+
+- MinimumBalanceAccount와 SavingsAccount가 BankAccount를 상속
+  - 상속받으면 중복된 코드를 상속받으므로 코드가 중복적으로 적힐 필요 없다.
+  - MinimumBalanceAccount -> 출금을 `@Override`
+    - `@Override`와 같이 골뱅이(`@`)가 붙어있는 문법을 '어노테이션(Annotation)'. 주석(Comment)과 어느정도 비슷하지만, 어노테이션은 자바에서 추가적인 기능을 제공
+    - `@Override`를 써줬는데 부모 클래스에 같은 이름의 메소드가 없는 경우, 오류
+
+![image-20200306223319586](README.assets/image-20200306223319586.png)
+
+
+
+```java
+public class BankAccount {
+    private int balance;
+
+    public int getBalance() { 
+        return balance; 
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    // 출금
+    public boolean withdraw(int amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            return true;
+        }
+
+        return false
+    }
+
+    // 입금
+    public boolean deposit(int amount) {
+        balance += amount;
+        return true;
+    }
+}
+```
+
+
+
+```java
+public class SavingsAccount extends BankAccount {
+    private double interest;
+
+    public void setInterest(double interest) {
+        this.interest = interest;
+    }
+
+    public double getInterest() {
+        return interest;
+    }
+
+    public void addInterest() {
+      // balance는 부모클래스에서 private이므로 부모의 method로 접근해야한다.
+        setBalance((int) (getBalance() * (1 + interest)));
+    }
+}
+```
+
+
+
+```java
+public class MinimumBalanceAccount extends BankAccount {
+    private int minimum;
+
+    public void setMinimum(int minimum) {
+        this.minimum = minimum;
+    }
+
+    public int getMinimum() {
+        return minimum;
+    }
+
+  	// MinimumBalanceAccount의 인스턴스는 BankAccount의 withdraw가 아닌 MinimumBalanceAccount의 withdraw를 호출
+    @Override
+    public boolean withdraw(int amount) {
+        if (getBalance() - amount < minimum) {
+            System.out.println("적어도 " + minimum + "원은 남겨야 합니다.");
+            return false;
+        }
+
+        setBalance(getBalance() - amount);
+        return true;
+    }
+}
+```
+
+
+
+- super
+  - 
+
+
+
+
+
 
 
 

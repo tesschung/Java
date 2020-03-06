@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee869ffe-6dc4-47b3-94ef-621eaf89b270" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaBasic/HashMapPrac.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaBasic/HashMapPrac.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaBasic/WordDictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaBasic/WordDictionary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PokeBag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokeBag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pokemon.java" afterDir="false" />
-    </list>
+    <list default="true" id="ee869ffe-6dc4-47b3-94ef-621eaf89b270" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582772566365</updated>
       <workItem from="1582772567630" duration="11299000" />
-      <workItem from="1583059504203" duration="15198000" />
+      <workItem from="1583059504203" duration="15200000" />
     </task>
     <servers />
   </component>
