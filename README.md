@@ -705,7 +705,112 @@ public class MinimumBalanceAccount extends BankAccount {
 
 
 - super
-  - 
+
+  - 상속을 받은 자식키워드가 사용
+
+    - 자식클래스가 1. 부모클래스의 변수, 메소드를 사용할 때 2. 부모클래스의 생성자를 사용할 때
+
+  - super(변수)  super.메소드()
+
+  -  **(1)** 자식클래스의 인스턴스 생성시 부모클래스의 생성자는 반드시 불린다. 인스턴스 생성시 생성자 호출은 필수
+
+    - ```java
+      Child c = new Child(); // Child 인스턴스 생성시 Parent의 생성자도 불림
+      ```
+
+    - 부모에서 this.balance 자식에서 super(balance)
+
+  -  **(2)** 부모클래스의 생성자가 없는 경우에 부모클래스의 기본 생성자가 불린다. **즉, 파라미터가 없는 생성자가 없는 경우, 자식 클래스에서 반드시 직접 (코드로 써서) 부모 클래스의 생성자 호출을 시켜줘야한다.**
+
+    - 부모에서 ...  , 자식에서 this.balance 
+
+    - ```java
+      public class Parent {
+          // 별도로 생성자가 지정되어있는 경우 (파라미터 없는 기본 생성자가 없는 경우)
+          public Parent(int a, int b) {
+              ...
+          }
+          ...
+      }
+          
+      public class Child extends Parent {
+          public Child() {
+              super(0, 0); // 자식 클래스에 생성자를 만들어 'super(int, int)'를 호출해 주어야 함
+              ...
+          }
+      }
+      ```
+
+  - 부모클래스에 기본 생성자가 없는 경우 자식 클래스에 생성자를 만들어 부모클래스의 생성자를 호출해야한다.
+
+    - 부모클래스의 생성자 호출은 맨 윗줄에 적어야 한다.
+
+    - 오류 
+
+      ```java
+      public class Child extends Parent {
+          public Child() {
+              int a = 0;
+              ...
+              super(0, 0); // 이 곳에서 호출할 수 없음. 반드시 첫 번째 줄에 있어야 함.
+          }
+      }
+      ```
+
+
+
+- 부모의 변수, 메소드를 사용할때
+
+```java
+public class BankAccount {
+    .
+    .
+    .
+    boolean withdraw(int amount) {
+        ...
+    }
+}
+
+public class TransferLimitAccount extends BankAccount {
+    private int transferLimit;
+
+    @Override
+    boolean withdraw(int amount) { // 정의한 메소드 사용
+        if (amount > transferLimit) {
+            return false;
+        }
+
+        return super.withdraw(amount); // 부모의 메소드 사용
+    }
+}
+```
+
+
+
+- 부모의 생성자를 사용할때
+
+```java
+public class BankAccount {
+    ...
+    public BankAccount(int balance) {
+        this.balance = balance;
+    }
+}
+
+public class TransferLimitAccount extends BankAccount {
+    ...
+    public TransferLimitAccount(int balance, int transferLimit) {
+        super(balance); // 부모클래스의 생성자를 부르는 키워드
+        this.transferLimit = transferLimit;
+    }
+}
+```
+
+
+
+
+
+
 
 
 
