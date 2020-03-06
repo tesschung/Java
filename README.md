@@ -808,6 +808,185 @@ public class TransferLimitAccount extends BankAccount {
 
 
 
+```java
+public class A {
+    public A() {
+        System.out.println("1");
+    }
+
+    public void a() {
+        System.out.println("2");
+    }
+}
+
+public class B extends A {
+    // empty class!
+}
+B b = new B(); // 1
+b.a(); // 2
+
+
+public class C extends A {
+		@Override
+  	public void a() {
+        System.out.println("3");
+    }
+}
+C c = new C(); // 1
+c.a()// 3
+  
+  
+public class D extends C {
+  	@Override
+    public void a() {
+        System.out.println("4");
+        super.a(); // 직전의 부모클래스
+    }
+}
+D d = new D(); // 1 
+d.a(); // 4 // 3
+
+
+public class E extends A {
+
+    public E() {
+        System.out.println("5");
+    }
+
+    public E(int a) {
+        System.out.println("6");
+    }
+}
+E e = new E(1); // 1 // 6
+e.a(); // 2
+
+
+public class H extends E {
+    public H(int a) {
+        System.out.println("10");
+    }
+}
+H h = new H(1); // 1 // 5 // 10 
+h.a(); // 2
+```
+
+
+
+```java
+public class F {
+  // 부모인 F클래스에 기본 생성자가 없어서 자식 클래스는 어떤 생성자를 호출할지 모른다.
+  // 자식에서 super(1)과 같이 명확하게 호출해줘야 한다.
+    public F(int a) {
+        System.out.println("7");
+    }
+    
+    public void a() {
+        System.out.println("8");
+    }
+}
+public class G extends F {
+    public void a() {
+        super.a();
+        System.out.println("9");
+    }
+}
+
+G g = new G(); // 오류발생
+g.a();
+```
+
+
+
+```java
+public class I extends A {
+    public I() {
+        System.out.println("11");
+        super(); // 부모클래스의 생성자 호출은 자식 클래스 생성자의 맨 첫 줄에서 불려야 한다.
+    }
+}
+I i = new I(); // 오류발생
+i.a();
+```
+
+
+
+- protected 접근 제어자
+
+```java
+public class BankAccount {
+    private int balance;
+    ...
+}
+public class MinimumBalanceAccount extends BankAccount {
+    ...
+    @Override
+    public boolean withdraw(int amount) {
+      // private로 되어있어서 balance에 접근하기 위해서는 부모클래스의 메소드로 get해야 했다. 보호 차원에서는 좋지만, 상속한 클래스에서의 접근성 마저 떨어지게 되어 유연하지 않다고 볼 수 있다.
+        if (getBalance() - amount < minimum) {
+            System.out.println("적어도 " + minimum + "원은 남겨야 합니다.");
+            return false;
+        }
+    
+        setBalance(getBalance() - amount);
+        return true;
+    }
+}
+```
+
+이런경우 protected 사용 -> 자식 클래스에서 접근 가능하도록 한다.
+
+상속의 유연함과 private의 보호성을 동시 만족
+
+
+
+```java
+public class BankAccount {
+    protected int balance;
+    ...
+}
+public class MinimumBalanceAccount extends BankAccount {
+    ...
+    @Override
+    public boolean withdraw(int amount) {
+        // if (getBalance() - amount < minimum) {
+        if (balance - amount < minimum) {
+            System.out.println("적어도 " + minimum + "원은 남겨야 합니다.");
+            return false;
+        }
+    
+        // setBalance(getBalance() - amount);
+        balance -= amount;
+        return true;
+    }
+}
+```
+
+상속받는 클래스에서만 접근 가능하나, BankDriver같은 외부 클래스에서 접근이 안되는 것은 여전히 유효하다.
+
+그래서 상속받은 클래스에서 접근이 잦은 경우 protected로 선언하게 된다!
+
+
+
+- 객체를 위한 클래스  Object Class
+
+  - Object 최상위 클래스, 모든 클래스의 부모클래스
+
+    ```java
+    Object object = new Object();
+    ```
+
+  - person.toString()
+
+    ```java
+    @Override
+    public String toString() {
+      return firstName + lastName //이런식으로 재정의 해주면 글자로 잘 나온다.
+    }
+    ```
+
+    
+
+
 
 
 
