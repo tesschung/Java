@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee869ffe-6dc4-47b3-94ef-621eaf89b270" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DictionaryDriver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HashMapPrac.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PokeBag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PokeDriver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/WordDictionary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaBasic/ArrayListExam.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaBasic/ArrayListExam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArrayListExam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArrayListExam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaBasic/HashMapPrac.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaBasic/HashMapPrac.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaBasic/WordDictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaBasic/WordDictionary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PokeBag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokeBag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pokemon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,14 +44,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Application.DictionaryDriver">
-    <configuration name="ArrayList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ArrayList" />
-      <module name="JavaBasic" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.PokeDriver">
     <configuration name="ArrayListExam" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ArrayListExam" />
       <module name="JavaBasic" />
@@ -85,13 +73,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PokeDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PokeDriver" />
+      <module name="JavaBasic" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PokeDriver" />
         <item itemvalue="Application.DictionaryDriver" />
         <item itemvalue="Application.HashMapPrac" />
         <item itemvalue="Application.ArrayListExam" />
         <item itemvalue="Application.ArrayListPrac" />
-        <item itemvalue="Application.ArrayList" />
       </list>
     </recent_temporary>
   </component>
@@ -106,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582772566365</updated>
       <workItem from="1582772567630" duration="11299000" />
-      <workItem from="1583059504203" duration="12170000" />
+      <workItem from="1583059504203" duration="15198000" />
     </task>
     <servers />
   </component>
@@ -118,33 +113,33 @@
       <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state x="784" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.830@0.23.1440.830" timestamp="1583317142611" />
-    <state width="860" height="171" key="GridCell.Tab.0.bottom" timestamp="1583426003640">
+    <state width="715" height="171" key="GridCell.Tab.0.bottom" timestamp="1583496087541">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state width="860" height="171" key="GridCell.Tab.0.bottom/0.23.1440.830@0.23.1440.830" timestamp="1583426003640" />
-    <state width="860" height="171" key="GridCell.Tab.0.center" timestamp="1583426003639">
+    <state width="715" height="171" key="GridCell.Tab.0.bottom/0.23.1440.830@0.23.1440.830" timestamp="1583496087541" />
+    <state width="715" height="171" key="GridCell.Tab.0.center" timestamp="1583496087541">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state width="860" height="171" key="GridCell.Tab.0.center/0.23.1440.830@0.23.1440.830" timestamp="1583426003639" />
-    <state width="860" height="171" key="GridCell.Tab.0.left" timestamp="1583426003639">
+    <state width="715" height="171" key="GridCell.Tab.0.center/0.23.1440.830@0.23.1440.830" timestamp="1583496087541" />
+    <state width="715" height="171" key="GridCell.Tab.0.left" timestamp="1583496087541">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state width="860" height="171" key="GridCell.Tab.0.left/0.23.1440.830@0.23.1440.830" timestamp="1583426003639" />
-    <state width="860" height="171" key="GridCell.Tab.0.right" timestamp="1583426003640">
+    <state width="715" height="171" key="GridCell.Tab.0.left/0.23.1440.830@0.23.1440.830" timestamp="1583496087541" />
+    <state width="715" height="171" key="GridCell.Tab.0.right" timestamp="1583496087541">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state width="860" height="171" key="GridCell.Tab.0.right/0.23.1440.830@0.23.1440.830" timestamp="1583426003640" />
+    <state width="715" height="171" key="GridCell.Tab.0.right/0.23.1440.830@0.23.1440.830" timestamp="1583496087541" />
     <state x="442" y="279" key="com.intellij.ide.util.TipDialog" timestamp="1583059511452">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state x="442" y="279" key="com.intellij.ide.util.TipDialog/0.23.1440.830@0.23.1440.830" timestamp="1583059511452" />
-    <state x="788" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582775877381">
+    <state x="788" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583496277775">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state x="788" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.830@0.23.1440.830" timestamp="1582775877381" />
-    <state x="670" y="177" width="670" height="676" key="search.everywhere.popup" timestamp="1583411458118">
+    <state x="788" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.830@0.23.1440.830" timestamp="1583496277775" />
+    <state x="670" y="177" width="670" height="676" key="search.everywhere.popup" timestamp="1583496378327">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state x="670" y="177" width="670" height="676" key="search.everywhere.popup/0.23.1440.830@0.23.1440.830" timestamp="1583411458118" />
+    <state x="670" y="177" width="670" height="676" key="search.everywhere.popup/0.23.1440.830@0.23.1440.830" timestamp="1583496378327" />
   </component>
 </project>
