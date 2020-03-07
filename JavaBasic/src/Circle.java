@@ -1,4 +1,4 @@
-public class Circle implements Shape {
+public class Circle extends Shape {
     public static final double PI = Math.PI;
 
     public final double radius;

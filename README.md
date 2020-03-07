@@ -1145,7 +1145,16 @@ public class PhoneBox<T extends Phone> extends Box<T> {
 
 
 
+- 익명클래스
+  - 생성하면서 abstract method를 정의할 수 있다.
+  - 사용자가 어떤 이름의 클래스를 만들지 모르는 경우, 사용 가능
 
+
+
+- comparable 인터페이스 
+  - Collections.sort(nameArrayList) // 작은순서대로
+  - 안에 원소가 두 가지 이상이면 기준을 정해줘야 한다.
+  - implements Comparable<Person> -> 선언후 메소드 생성
 
 
 
