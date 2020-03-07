@@ -986,13 +986,73 @@ public class MinimumBalanceAccount extends BankAccount {
 
     
 
+- 캐스팅 Casting
+
+  - 다운캐스팅 
+
+    ```java
+    If (account instanceof SavingsAccount) {
+    
+    ((SavingsAccount) account).addInterest();
+    
+    }
+    ```
+
+  - 타입캐스팅
+
+    - BankAccount 타입으로 캐스팅 되고 한 번에 묶어서 다룬다.
+
+    ```java
+    ArrayList<BankAccount> accounts = new ArrayList<>;
+    
+    accounts.add(ba);
+    accounts.add(mba);
+    accounts.add(sa);
+    
+    for (BankAccount account : accounts) {
+        account.deposit(1000);
+    }
+    ```
 
 
 
+- 제너릭 Generic
+
+Generic은 Casting을 보완
+
+```java
+public class Box<T> {
+    private T something;
+
+    public void set(T object) { 
+        this.something = object;
+    }
+
+    public T get() {
+        return something;
+    }
+}
+
+// 아래와 같이 String을 넘겨주면, 
+Box<String> box = new Box<>();
 
 
+public class Box<String> { // 이처럼 <T>가 <String>으로 동작한다.
+    private String object;
 
+    public void set(String object) {
+        this.object = object;
+    }
 
+    public String get() {
+        return object;
+    }
+}
+```
+
+아래 꺽쇠 기호(`<>`) 사이에 있는 `T`를 **'타입 파라미터**
+
+`Box`와 같이 타입 파라미터를 받는 클래스를 **'제네릭 클래스(Generic Class)'**
 
 
 
