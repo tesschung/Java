@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee869ffe-6dc4-47b3-94ef-621eaf89b270" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AverageFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AverageFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -100,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582772566365</updated>
       <workItem from="1582772567630" duration="11299000" />
-      <workItem from="1583059504203" duration="20455000" />
+      <workItem from="1583059504203" duration="21260000" />
     </task>
     <servers />
   </component>
@@ -108,6 +110,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="874" y="159" key="#com.intellij.ide.util.MemberChooser" timestamp="1583590676804">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state x="874" y="159" key="#com.intellij.ide.util.MemberChooser/0.23.1440.836@0.23.1440.836" timestamp="1583590676804" />
     <state x="784" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583317142611">
       <screen x="0" y="23" width="1440" height="830" />
     </state>

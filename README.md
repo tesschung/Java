@@ -1066,15 +1066,82 @@ public class Box<String> { // 이처럼 <T>가 <String>으로 동작한다.
 
 
 
-- 상속의 개념이 합쳐지면 더 다양한 방식으로 제네릭(generic)을 사용가능
+- 상속의 개념이 합쳐지면 더 다양한 방식으로 제네릭(generic)을 사용 가능
 
 ![image-20200307230002135](README.assets/image-20200307230002135.png)
 
 
 
+`PhoneBox` 클래스는 `Phone` 타입을 받는 `Box` 클래스를 상속
+
+```java
+public class PhoneBox extends Box<Phone> {
+    public void handsFreeCall(String numberString) {
+        object.call(numberString);
+    }
+}
+```
 
 
 
+개선
+
+- `extends` 키워드를 이용하면 타입을 제한 가능
+  - `AndroidPhone`이라는 클래스는 `Phone`을 상속 받기 때문에 `PhoneBox`은 가능, 하지만 `PhoneBox`을 쓰면 오류가 발생.
+
+```java
+// <T extends Phone>은 T가 Phone의 자식 클래스이어야 한다.
+public class PhoneBox<T extends Phone> extends Box<T> {
+    public void handsFreeCall(String numberString) {
+        object.call(numberString);
+    }
+}
+```
+
+
+
+- 인터페이스
+
+  - 계약서, 빈 메소드의 모음
+
+  - public interface Shape { double getArea() }
+
+    - public Circle implements Shape {
+
+      // 사용하겠다고 선언했으면 사용해야 오류가 발생하지 않는다. 
+
+      Public double getArea() {return PI * radius * radius}
+
+      }
+
+    - shape이라는 공통된 타입으로 묶어서 다룰 수 있다.
+
+- 추상클래스 
+
+  - 변수, 메소드, 빈메소드를 모두 가질 수 있다.
+
+    ```java
+    public abstract class Shape {
+        
+        private double x,y;
+    
+        public double getX() {
+            return x;
+        }
+    
+        public double getY() {
+            return y;
+        }
+    
+        public void move(double x, double y) {
+            this.x += x;
+            this.y += y;
+        }
+    
+        public abstract double getArea();
+        public abstract double getPerimeter();
+    }
+    ```
 
 
 
