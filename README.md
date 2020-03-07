@@ -1056,6 +1056,30 @@ public class Box<String> { // 이처럼 <T>가 <String>으로 동작한다.
 
 
 
+`T`(Type)
+
+`E`(Element)
+
+만약 `HashMap`의 경우에는 `K`(Key)와 `V`(Value)
+
+
+
+
+
+- 상속의 개념이 합쳐지면 더 다양한 방식으로 제네릭(generic)을 사용가능
+
+![image-20200307230002135](README.assets/image-20200307230002135.png)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
