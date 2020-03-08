@@ -1,5 +1,11 @@
 [TOC]
 
+# 참고
+
+[생활코딩 자료정리](http://tcpschool.com/java/java_collectionFramework_stackQueue)
+
+
+
 # 자바
 
 **"한 번만 작성하면, 어디서든 동작한다. (Write Once, Run Anywhere.)"**
@@ -1155,6 +1161,47 @@ public class PhoneBox<T extends Phone> extends Box<T> {
   - Collections.sort(nameArrayList) // 작은순서대로
   - 안에 원소가 두 가지 이상이면 기준을 정해줘야 한다.
   - implements Comparable<Person> -> 선언후 메소드 생성
+
+
+
+
+
+# 키워드
+
+```java
+// HashMap<T> Character, String, Integer...
+// 해시맵은 객체로 선언해주어야 한다.
+private HashMap<Character, Character> mappings;
+
+
+// 자바에서 메모이제이션을 만들려면, 해시맵.put(K, V) 식으로 추가해줘야 한다.
+public Solution() {
+  this.mappings = new HashMap<Character, Character>();
+  this.mappings.put(')', '(');
+  this.mappings.put('}', '{');
+  this.mappings.put(']', '[');
+}
+
+
+// stack 라이브러리
+// .pop(Index)
+// 해당 스택의 제일 상단에 있는(제일 마지막으로 저장된) 요소를 반환하고, 해당 요소를 스택에서 제거함.
+
+// .peek()
+// 해당 스택의 제일 상단에 있는(제일 마지막으로 저장된) 요소를 반환함.
+
+
+// .empty() empty면 Boolean 값 반환
+// 해당 스택이 비어 있으면 true를, 비어 있지 않으면 false를 반환함.
+
+// .push(V)
+
+Stack<Character> stack = new Stack<Character>();
+```
+
+
+
+
 
 
 
