@@ -1122,9 +1122,13 @@ public class PhoneBox<T extends Phone> extends Box<T> {
 
     - shape이라는 공통된 타입으로 묶어서 다룰 수 있다.
     
-  - 
-
-
+  - 인터페이스는 클래스와 달리 다중 상속을 허용
+  
+    - ```java
+      public interface 하위인터페이스 extends 상위인터페이스1, 상위인터페이스2 {...}
+      ```
+  
+      
 
 
 
@@ -1192,6 +1196,8 @@ public class PhoneBox<T extends Phone> extends Box<T> {
   - Collections.sort(nameArrayList) // 작은순서대로
   - 안에 원소가 두 가지 이상이면 기준을 정해줘야 한다.
   - implements Comparable<Person> -> 선언후 메소드 생성
+
+
 
 
 
@@ -1311,13 +1317,35 @@ https://gmlwjd9405.github.io/2017/10/01/basic-concepts-of-development-java.html
 
 #### OOP의 4가지 특징
 
-```
-
-
-```
-
-
   - 추상화(Abstraction), 캡슐화(Encapsulation), 상속(Inheritance), 다형성(Polymorphism)
+```
+추상화(Abstraction)
+
+
+캡슐화(Encapsulation)
+
+
+상속(Inheritance)
+
+
+다형성(Polymorphism)
+하나의 타입에 대입되는 객체에 따라서 실행 결과가 다양한 형태로 나오는 성질
+
+상속의 다형성
+- 같은 종류의 하위 클래스를 만드는 기술
+
+인터페이스의 다형성
+- 사용방법이 동일한 클래스를 만드는 기술
+- 프로그램을 개발할 때 인터페이스를 사용해서 메소드를 호출하도록 코딩을 했다면, 구현 객체를 교체하는 것은 매우 손쉽고 빠르게 할 수 있다. 프로그램 소스 코드는 변함이 없는데, 구현 객체를 교체함으로써 프로그램의 실행 결과가 다양해진다. 
+
+```
+
+
+
+
+
+
+
 #### OOP의 5대 원칙 (SOLID)
 
 ```
