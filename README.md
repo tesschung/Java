@@ -1288,6 +1288,23 @@ people.clear(); // 데이터 모두 삭제
 
 
 
+#### Collections.unmodifiableList()
+
+```java
+// Immutable list (unmodiriable List)
+List<String> readOnlyList = Collections.unmodifiableList(myList);
+System.out.println(readOnlyList);
+
+readOnlyList.add("white"); // error
+
+// Java9 of 메소드 사용, Immutable list (unmodiriable List)
+// 리스트를 만들면서 바로 엘레먼트를 작성 할 수 있다.
+List<String> Java9List = List.of("red", "blue", "green");
+// [red, blue, green]
+```
+
+- List를 Immutable하게 사용하는 것이 최근
+
 
 
 
