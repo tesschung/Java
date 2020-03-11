@@ -1207,7 +1207,7 @@ public class PhoneBox<T extends Phone> extends Box<T> {
 
 
 
-- Stack
+#### Stack
 
 ```java
 // HashMap<T> Character, String, Integer...
@@ -1240,6 +1240,55 @@ public Solution() {
 // Character을 원소로 담을 스택 생성
 Stack<Character> stack = new Stack<Character>();
 ```
+
+
+
+#### ArrayList vs Map
+
+배열의 특징 
+
+- 시간복잡도가 ArrayList보다는 적게 든다.
+
+- 같은 타입의 엘레먼트만 사용 가능
+- 한번 생성하면 길이를 바꿀 수 없음
+
+ArrayList 
+
+- 배열을 사용하기 쉽도록 만든 클래스
+- 객체 내부에서 배열을 관리 (자동으로 길이를 조절)
+- 데이터를 저장을 인덱스 기반으로 수행
+- 데이터의 순서가 있음
+- 인덱스는 제로(0) 베이스
+
+````java
+ArrayList<String> colors = new ArrayList<>();
+
+colors.add("red"); // 맨 마지막에 추가
+
+colors.get(0); // 인덱스 접근
+
+colors.clear(); // 데이터 모두 삭제
+````
+
+Map
+
+- 데이터를 키를 통해 관리
+- 데이터를 키/값 쌍으로 저장/ 관리
+- 인덱스가 없음, 데이터의 순서가 없음
+
+```java
+HashMap<String, Integer> people = new HashMap<>();
+
+people.put("sw", 25); // 데이터 추가
+
+people.get("sw"); // 키 접근
+
+people.clear(); // 데이터 모두 삭제
+```
+
+
+
+
 
 
 
