@@ -34,7 +34,7 @@ public class ArrayListVSMap {
         readOnlyList.add("white"); // error
 
         // Java9 of 메소드 사용
-        List<String> Java9List = List.of("red", "blue", "green");
+//        List<String> Java9List = List.of("red", "blue", "green");
 
 
     }

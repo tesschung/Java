@@ -36,6 +36,14 @@ Package명을 꼭 작성하고 시작할 것.
 
 
 
+- package
+  - 클래스를 계층적으로 분리해서 저장하는 방식
+  - .으로 구분하고 이름의 유일성을 보장하기 위해 인터넷 도메인 명을 뒤집에서 사용한다.
+
+
+
+
+
 - `ArithmeticException` 산술/연산예외
 
 ```java
@@ -115,11 +123,56 @@ char[] charArray = dna.toCharArray();
 
 
 
+
+
+- 함수
+
+  - 함수와 메서드
+  - 메서드 파라미터 전달 방식 비교
+
+  - Java에서 함수와 메소드는 동일하게 사용
+  - 메소드가 좀 더 기술적으로 맞는 묭어
+    - 클래스 내부에 있는 함수를 특별히 메소드라고 함
+  - Main 메소드가 길어지면 클래스로 분리 또는 여러 함수로 분리 가능
+
+  ```java
+  메소드 구조
+    - 반환값 타입(없으면 void)
+    - 메소드 이름
+    - 파라미터 타입과 이름
+    - 메소드 구현부
+    - 반환할 결과가 있으면 return
+    
+    
+  가변인자
+  public static double average(double... values) {
+    double sum = 0;
+    for (double v : values) sum += v;
+    return values.Length == 0 ? 0 : sum / values.Length;
+  }
+  ```
+
+
+
+- Call by Value(Primitive) vs Call by Reference
+  - 기본 primitive
+    - 기본 자료형에 적용
+    - 변수에 값 자체를 저장
+    - 변수를 복사하면 값 자체를 복사
+  - 객체 reference
+    - 배열이나 객체를 참조
+    - 변수에는 값이 아니라 객체의 주소 참조값이 저장
+    - 변수를 복사하면 주소가 복사되어 하나의 객체를 참조
+
+
+
 - 객체지향프로그래밍 **OOP** Object Oriented Programming
 
 정보와 동작들을 객체 단위로 묶고, 이런 객체들을 연결시키면서 정리하는 프로그래밍 방식
 
-**'객체'**는 '속성'들과 '동작'들의 묶음이라고 할 수 있는데요. 속성은 **'변수'**로 나타내고, 동작은 **'메소드(함수)'**로 나타냅니다.
+**'객체'**는 '속성'들과 '동작'들의 묶음
+
+속성은 **'변수'**로 나타내고, 동작은 **'메소드(함수)'**로 나타낸다.
 
 
 
@@ -281,12 +334,20 @@ System.out.println(countB);
 
 
 - `final` // 변수 안전하게 만들기
-  - 변수를 정의할 때 `final`을 써주면, 그 변수는 '상수'가 된다. 즉, 한 번 정의하고 나서 다시 바꿀 수 없다는 것
 
-```java
-final double pi = 3.141592;
-pi = 2.54; // java: cannot assign a value to final variable name
-```
+  - `변수`를 정의할 때 `final`을 써주면, 그 변수는 '상수'가 된다. 즉, 한 번 정의하고 나서 다시 바꿀 수 없다는 것
+
+  ```java
+  final double pi = 3.141592;
+  pi = 2.54; // java: cannot assign a value to final variable name
+  ```
+
+  - `메소드`를 final로 선언하면 서브클래스에서 오버라이딩 불가
+  - `클래스`를 final로 선언하면 서브클래스를 만들 수 없다.
+
+
+
+
 
 
 
@@ -366,14 +427,18 @@ pi = 2.54; // java: cannot assign a value to final variable name
 
   - 클래스 변수 버전
 
-    - 클래스 변수를 정의하기 위해 `static`이라는 키워드를 붙여준다.
+    - 인스턴스화 시키지 않고 사용하고 싶을때 static을 사용한다.
 
+      - static value, static method 모두 가능
+    
+    - 클래스 변수를 정의하기 위해 `static`이라는 키워드를 붙여준다.
+    
     - ```java
-      public class Person {
+  public class Person {
           static int count;
       }
       ```
-
+    
     - 이렇게 `static`으로 해두면 count는 특정 인스턴스에만 해당되는 것이 아니라 Person 클래스 전체에 해당된다. 따라서 count를 부를때는 `클래스이름.count`로 부른다.
 
 
@@ -395,7 +460,7 @@ public static void main(String[] args) {
 }
 ```
 
-- 하지만, Person.count를 매번 선언해줘여 한다는 단점, 그래서 생성을 할때 내부적으로 	count가 가능하게 하면 더욱 깔끔한 코드를 작성할 수 있다.
+- 하지만, Person.count를 매번 선언해줘야 한다는 단점, 그래서 생성을 할때 내부적으로 count가 가능하게 하면 더욱 깔끔한 코드를 작성할 수 있다.
 
   - ```java
     public class Person {
@@ -417,8 +482,6 @@ public static void main(String[] args) {
         System.out.println(Person.count);
     }
     ```
-
-
 
 
 
@@ -610,6 +673,12 @@ public class HashMapPrac {
 
 
 - 상속 `extends`
+  
+  - 슈퍼클래스(부모)와 서브클래스(자식)간의 관계가 상속으로 이루어진다.
+    - is-a 관계
+  
+  
+  
   - 잔액이라는 속성과 입금기능은 셋다 가지고 있음
   - 출금 또한. 하지만 하나는 다르다.
 
@@ -1108,18 +1177,24 @@ public class PhoneBox<T extends Phone> extends Box<T> {
 
 - 인터페이스
 
-  - 계약서, 빈 메소드의 모음
+  - 서비스 공급자(서버)와 사용자(클라이언트)간의 계약을 표현하는 메커니즘
+
+  - 계약서, **상수, 빈 메소드(abstract 메소드) 그리고default/static/private 메소드)**의 모음 -- java 8 이후에 많은 업데이트가 이뤄짐
+
+    - // abstract method
+  - public List<Product> getAllProducts();
+    - // default/static/private method -> 빈 메소드가 아닌 경우
 
   - public interface Shape { double getArea() }
 
     - public Circle implements Shape {
 
       // 사용하겠다고 선언했으면 사용해야 오류가 발생하지 않는다. 
-
+  
       Public double getArea() {return PI * radius * radius}
-
+  
       }
-
+  
     - shape이라는 공통된 타입으로 묶어서 다룰 수 있다.
     
   - 인터페이스는 클래스와 달리 다중 상속을 허용
@@ -1128,7 +1203,6 @@ public class PhoneBox<T extends Phone> extends Box<T> {
       public interface 하위인터페이스 extends 상위인터페이스1, 상위인터페이스2 {...}
       ```
   
-      
 
 
 
@@ -1199,7 +1273,24 @@ public class PhoneBox<T extends Phone> extends Box<T> {
 
 
 
+- 람다 표현식
 
+  ```java
+  comparator 인터페이스
+  int compare(T first, T second);
+  
+  runnable 인터페이스 // 쓰레드에서 주로 사용
+  void run();
+  
+  사용자 인터페이스 콜백
+  void handle(ActionEvent e);
+  
+  함수형 인터페이스란? 추상 메소드 하나만 포함하는 인터페이스
+  
+  
+  ```
+
+  
 
 
 
@@ -1307,6 +1398,18 @@ List<String> Java9List = List.of("red", "blue", "green");
 
 
 
+#### LocalDate
+
+```java
+LocalDate date = LocalDate.of(2016, 1, 1)
+```
+
+
+
+
+
+
+
 
 
 
@@ -1385,16 +1488,18 @@ https://gmlwjd9405.github.io/2017/10/01/basic-concepts-of-development-java.html
 
   - 추상화(Abstraction), 캡슐화(Encapsulation), 상속(Inheritance), 다형성(Polymorphism)
 ```
-추상화(Abstraction)
+*추상화(Abstraction)
 
 
-캡슐화(Encapsulation)
+*캡슐화(Encapsulation)
+- 정보은닉, private로 필드를 선언하고 메소드로 필드값을 넣거나 변경할 수 있도록하는 것
+
+*상속(Inheritance)
+- 클래스를 확장한다.
+- 클래스의 재사용 방법 중에 하나이다.
 
 
-상속(Inheritance)
-
-
-다형성(Polymorphism)
+*다형성(Polymorphism)
 하나의 타입에 대입되는 객체에 따라서 실행 결과가 다양한 형태로 나오는 성질
 
 상속의 다형성
@@ -1477,6 +1582,19 @@ finalize
 #### 클래스, 객체, 인스턴스의 차이
 
 ```
+클래스
+- class 키워드를 통해 작성
+- 멤버 변수(필드), 메서드, 생성자로 구성
+- 멤버 변수와 메서드는 접근제한자를 통해 외부로의 노출 정도를 나타낸다
+
+
+객체
+
+
+
+인스턴스
+
+
 
 
 ```
@@ -1501,6 +1619,9 @@ finalize
 #### Call by Reference와 Call by Value의 차이
 
 ```
+참조형과 기본형의 차이
+
+
 
 
 ```
