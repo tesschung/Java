@@ -347,13 +347,7 @@ System.out.println(countB);
 
 
 
-
-
-
-
-
-
-- 코드안전하게 만들기 try-catch 예외처리
+- 코드안전하게 만들기 `try-catch` 예외처리
 
   - ```java
     try {
@@ -380,8 +374,103 @@ System.out.println(countB);
       System.out.println(i);
     }
     ```
-  
+
   - 예외처리를 하여 프로그램이 죽지않고 예외부분은 메세지로, 그리고 그 외에 처리된 부분은 정상적으로 처리된 것을 확인 할 수 있다.
+
+  - Try-with-resource -> resource를 확실히 닫아주어 코드가 간결해진다.
+
+  - Exception re-throwing 예외 다시 던지기
+
+    - 예외 발생 시 당장 처리 방법을 모르는 경우
+    - 시스템 예외를 잡아서 사용자 정의 예외로 다시 던질 때
+    - Checked Exception을 잡아서 Unchecked Exception으로 다시 던질때
+
+    ```java
+    try {
+      ..데이터 베이스에 접근하는 코드..
+    } catch (SQLException se) {
+      throw new MyException(se); // 사용자 정의 exception을 만들어서 파라미터로 다시 던짐.
+    }
+    
+    
+    
+    
+    1.
+    import java.io.IOException;
+    import java.nio.file.Path;
+    import java.nio.file.Paths;
+    import java.util.Scanner;
+    
+    public class LilicReader {
+        public void doJob()  {
+            Path path = Paths.get("tes.txt");
+            // Scanner이라는 생성자에서 IOException발생하므로
+            // 예외 처리를 해야한다.
+    
+            // try-with-resource
+            try(Scanner in = new Scanner(path, "UTF-8")) { // 자원을 해제할때 문제가 생기는 try-catch를 해결
+      // try-with-resource 문법으로 in.close() 코드를 작성하지 않고도 파일이 닫아지므로 안정적이다.
+                in.useDelimiter("\n");
+                while (in.hasNext()) {
+                    System.out.println(in.next());
+                }
+                // 반드시 in.close()를 해줘야 한다.
+                // 그래야 다른 파일에서 파일을 사용할 수 있기 때문이다.
+               // in.close();
+            } catch (IOException ie) {
+                // 정상적으로 종료
+    //            System.out.println("error occured");
+                 throw new BizException("파일이 없습니다.", ie);
+            }
+        }
+    }
+    
+    
+    2.
+    // 사용자 정의로 던진 예외를 받는 곳
+    public class BizException extends RuntimeException{
+    
+        public BizException() {
+        super();
+        }
+    
+        public BizException(String msg) {
+        super(msg);
+        }
+    
+        public BizException(Exception e) {
+        super(e);
+        }
+    
+        public BizException(String msg, Exception e) {
+        super(msg, e);
+        }
+    }
+    
+    
+    
+    3.
+    import java.io.IOException;
+    
+    public class ExceptionTest {
+        public static void main(String[] args) {
+            LilicReader reader = new LilicReader();
+            try {
+                reader.doJob();
+            } catch (BizException e) {
+                System.out.println(e);
+            }
+        }
+    }
+    ```
+
+
+
+
+
+
+
+
 
 
 
@@ -1125,11 +1214,9 @@ public class Box<String> { // 이처럼 <T>가 <String>으로 동작한다.
 }
 ```
 
-아래 꺽쇠 기호(`<>`) 사이에 있는 `T`를 **'타입 파라미터**
+아래 꺽쇠 기호(`<>`) 사이에 있는 `T`를 **'타입 파라미터'**
 
 `Box`와 같이 타입 파라미터를 받는 클래스를 **'제네릭 클래스(Generic Class)'**
-
-
 
 `T`(Type)
 
@@ -1138,6 +1225,49 @@ public class Box<String> { // 이처럼 <T>가 <String>으로 동작한다.
 만약 `HashMap`의 경우에는 `K`(Key)와 `V`(Value)
 
 
+
+- 제네릭 클래스
+  - Generic 다양한 타입에도 동작하는 메소드와 클래스 작성이 필요할 때가 있다.
+    - ArrayList<T> 는 임의의 클래스 T를 요소로 저장한다.
+      - ArrayList 클래스 : 제네릭
+      - T : 타입 파라미터
+    - 제네릭 타입 파라미터는 기본 타입은 지원하지 않는다.
+      - 무슨 말이냐면, 클래스 타입만 가능하다는 것
+
+- 제네릭 메소드
+
+  - ```java
+    Arrays.swap(friends, 0, 1);
+    Arrays.<String>swap(friends, 0, 1);
+    
+    class Arrays {
+      public static <T> void swap (T[] array, int i, int j) {
+        T temp = array[i];
+        array[i] = array[j];
+        array[i] = temp;
+      }
+    }
+    ```
+
+    
+
+![image-20200312174814209](README.assets/image-20200312174814209.png)
+
+
+
+? -> 와일드 카드
+
+**서브타입**
+
+?을 사용하면 Employee 타입과 Employee의 하위 타입 모두가 들어간다.
+
+**슈퍼타입**
+
+상위 타입이 들어간다.
+
+**경계 X**
+
+아무 타입이나 들어간다.
 
 
 
@@ -1289,7 +1419,6 @@ public class PhoneBox<T extends Phone> extends Box<T> {
     
     
   import java.util.Arrays;
-  import java.util.Comparator;
   
   public class Lamda {
       public static void main(String[] args) {
@@ -1301,6 +1430,8 @@ public class PhoneBox<T extends Phone> extends Box<T> {
           // 타입이 같은경우
           // (String o1, String o2)
           // 생략가능
+        	// sort 메소드의 두번째 인자로는 Comparator이 들어가는데, 람다식에서는 자동으로 Comparator의 compare로 인식한다.
+        // 음수, 0, 양수 로 반환될텐데 이를 가지고 sort에서 처리를 하고 그다음에 string으로 변환해서 정리된 array를 반환한다.
           Arrays.sort(friends, (o1, o2) -> o1.length() - o2.length());
   
           for (String item : friends ){
@@ -1442,7 +1573,77 @@ LocalDate date = LocalDate.of(2016, 1, 1)
 
 
 
+#### 컬렉션 프레임워크
 
+- 자료구조와 알고리즘 구현에 적합
+
+- 계층적으로 조직화되어있다.
+
+  ![image-20200312175355823](README.assets/image-20200312175355823.png)
+
+![image-20200312175815723](README.assets/image-20200312175815723.png)
+
+
+
+**Set 집합**
+
+HashSet: 요소에 해시 함수가 구현되어 요소의 식별이 가능
+
+TreeSet: 이진트리로 구현, 요소가 순서가 있어 전체 요소를 순회 가능
+
+```java
+Set<String> badWords = new HashSet<>();
+
+badWords.add("smoking");
+
+if (badWords.contains(username.toLowerCase())) {
+  System.out.println("다른 단어를 사용해주세요.");
+} 
+```
+
+
+
+**Map 맵**
+
+키와 값으로 저장
+
+HashMap: 저장되는 순서가 없음
+
+TreeMap: 저장되는 순서가 있음
+
+
+
+**List 리스트**
+
+ArrayList: 인덱스를 기준으로 정렬 및 조회
+
+LinkedList: 연결리스트, 각각의 엘레먼트들이 물리적으로 떨어져있음 하지만 앞 단이 뒷 단의 주소값을 갖고 있어 참조를 한다.
+
+![image-20200312180431130](README.assets/image-20200312180431130.png)
+
+
+
+**Properties**
+
+설정파일로 사용됨
+
+
+
+**Stack**
+
+후입선출
+
+
+
+**Queue**
+
+선입선출
+
+
+
+#### Stream 스트림
+
+![image-20200312181050111](README.assets/image-20200312181050111.png)
 
 
 

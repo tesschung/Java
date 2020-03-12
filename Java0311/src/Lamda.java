@@ -16,5 +16,7 @@ public class Lamda {
         for (String item : friends ){
             System.out.println(item);
         }
+
+
     }
 }
