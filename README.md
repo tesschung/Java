@@ -1286,11 +1286,20 @@ public class PhoneBox<T extends Phone> extends Box<T> {
   void handle(ActionEvent e);
   
   함수형 인터페이스란? 추상 메소드 하나만 포함하는 인터페이스
-  
-  
   ```
 
-  
+  - 함수를 아주 짧게 표현하는 방식
+
+  ![image-20200312122155634](README.assets/image-20200312122155634.png)
+
+  - Predicate :  이 타입이 참인지 거짓인지 리턴
+  - Consumer : 데이터 확인, 리턴 값은 없음
+  - Function : 첫번째 타입을 두번째 타입으로 바꿔준다.
+  - Supplier : 인자는 없지만 어떤 것을 리턴
+
+
+
+
 
 
 

@@ -5,7 +5,7 @@ public class Product {
     private String name;
 
     public void Product() {
-        
+
     }
 
     public long getPrice() {
