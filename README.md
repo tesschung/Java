@@ -1285,7 +1285,34 @@ public class PhoneBox<T extends Phone> extends Box<T> {
   사용자 인터페이스 콜백
   void handle(ActionEvent e);
   
-  함수형 인터페이스란? 추상 메소드 하나만 포함하는 인터페이스
+  함수형 인터페이스란? 추상 메소드 하나만 포함하는 
+    
+    
+  import java.util.Arrays;
+  import java.util.Comparator;
+  
+  public class Lamda {
+      public static void main(String[] args) {
+          String[] friends = {"park", "kim", "lee"};
+          // (String first, String second) 라는 함수를 변수에 담아 넘겨준다.
+  
+          // 함수를 포함한 객체를 넣어야 한다.
+          // 글자수에 따른 정렬
+          // 타입이 같은경우
+          // (String o1, String o2)
+          // 생략가능
+          Arrays.sort(friends, (o1, o2) -> o1.length() - o2.length());
+  
+          for (String item : friends ){
+              System.out.println(item);
+          }
+      }
+  }
+  /*
+  kim
+  lee
+  park
+  */
   ```
 
   - 함수를 아주 짧게 표현하는 방식
