@@ -1647,6 +1647,68 @@ LinkedList: 연결리스트, 각각의 엘레먼트들이 물리적으로 떨어
 
 
 
+```java
+long count = myList.stream()
+  .filter(w -> w.length() > 3)
+  .count();
+System.out.println(count);
+
+long count2 = myList.parallelStream()
+  .filter(w -> w.length() > 3)
+  .count();
+System.out.println(count2);
+```
+
+
+
+pipline
+
+- 여러개의 스트림이 연결되어 있는 구조
+
+
+
+```java
+long count3 = myList.stream()
+        .map(w -> w.trim())
+        .filter(w -> w.length() > 3)
+        .count();
+System.out.println(count3);
+```
+
+
+
+**Collection** 
+
+외부반복 
+
+각 계산식을 만날 때마다 데이터가 계산됨
+
+직접 데이터 핸들링
+
+Eager loading
+
+```java
+for(int n : numbers) {
+  ...
+}
+```
+
+
+
+**Stream** 
+
+내부반복 
+
+최종 연산이 실행될 때 데이터가 계산됨
+
+계산식을 JVM에 던진다.
+
+Lazy loading
+
+```java
+numbers.forEach(n -> ... )
+```
+
 
 
 

@@ -24,6 +24,22 @@ public class ArrayListVSMap {
         String third = myList.get(2);
         System.out.println(third);
 
+        long count = myList.stream()
+                .filter(w -> w.length() > 3)
+                .count();
+        System.out.println(count);
+
+        long count2 = myList.parallelStream()
+                .filter(w -> w.length() > 3)
+                .count();
+        System.out.println(count2);
+
+        long count3 = myList.stream()
+                .map(w -> w.trim())
+                .filter(w -> w.length() > 3)
+                .count();
+        System.out.println(count3);
+
 //        myList.clear();
 //        System.out.println(myList); // []
 
