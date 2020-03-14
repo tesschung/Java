@@ -76,6 +76,18 @@ Package명을 꼭 작성하고 시작할 것.
 
 
 
+- Arrays.`deepEquals`(a, b) && Objects.`deepEquals`(a, b)
+
+객체 깊은 비교
+
+
+
+- Arrays.`equals`(a, b) && Objects.`equals`(a, b)
+
+객체 얕은 비교
+
+
+
 - `sout` == System.out.println()
 
 
