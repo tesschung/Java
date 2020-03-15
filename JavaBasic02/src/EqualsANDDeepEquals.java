@@ -32,5 +32,7 @@ public class EqualsANDDeepEquals {
         long end = System.nanoTime();
 
         System.out.println((end-start)+ " 소요됨");
+
+        System.out.println(System.getProperty("os.name"));
     }
 }
