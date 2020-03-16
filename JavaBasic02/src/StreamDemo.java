@@ -17,6 +17,6 @@ public class StreamDemo {
 
 
 //        Path p = Paths.get("/home", "kim", "myapp.properties");
-        
+
     }
 }
