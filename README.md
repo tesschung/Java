@@ -1845,6 +1845,14 @@ public class TextFileTest {
 
 
 
+#### 병렬스트림
+
+![image-20200316233813525](README.assets/image-20200316233813525.png)
+
+내부적으로 쪼개서 병렬처리됨
+
+
+
 
 
 
