@@ -1325,12 +1325,13 @@ public class PhoneBox<T extends Phone> extends Box<T> {
 
     - // abstract method
   - public List<Product> getAllProducts();
-    - // default/static/private method -> 빈 메소드가 아닌 경우
-
-  - public interface Shape { double getArea() }
-
-    - public Circle implements Shape {
-
+  
+- // default/static/private method -> 빈 메소드가 아닌 경우
+  
+- public interface Shape { double getArea() }
+  
+  - public Circle implements Shape {
+  
       // 사용하겠다고 선언했으면 사용해야 오류가 발생하지 않는다. 
   
       Public double getArea() {return PI * radius * radius}
@@ -1720,6 +1721,103 @@ Lazy loading
 ```java
 numbers.forEach(n -> ... )
 ```
+
+
+
+
+
+#### Stream 과 Optional
+
+**filter연산(중간연산)**
+
+Predicate를 인자로 받아서 true인 요소만을 반환
+
+```java
+menu.stream()
+  .filter(Dish::isVergeterian)
+  .collect(Collectors.toList());
+```
+
+
+
+**distinct연산(중간연산)**
+
+유일한 값을 반환
+
+```java
+menu.stream()
+  .distinct()
+  .forEach(System.out::println);
+```
+
+
+
+**limit연산(중간연산)**
+
+지정된 숫자만큼 반환
+
+```java
+menu.stream()
+  .limit(3)
+  .collect(Collectors.toList());
+```
+
+
+
+**map연산(중간연산)**
+
+스트림의 T객체를 U로 변환. 파라미터로 Function<T, U>를 사용
+
+```java
+menu.stream()
+  .map(Dish::getCalories)
+  .reduce((prev, curr) -> prev+curr);
+```
+
+
+
+NullPointException에서 벗어나기 위해서 코드가 길어지고 보기 좋지 않아지는 경우가 있다. 그래서 **Optional** 을 사용
+
+![image-20200316223915263](README.assets/image-20200316223915263.png)
+
+optional한 USB의 version을 리턴 하지만 null인 경우 UNKNOWN 리턴
+
+
+
+**collect() (최종연산)**
+
+Collectors.toList()
+
+Collectors.toSet()
+
+
+
+#### 입력/출력 스트림
+
+데이터를 읽고 쓸 때는 스트림을 이용한다.
+
+
+
+**Path** : 파일과 디렉터리를 나타낸다
+
+디렉터리 이름을 나타내며, 경우에 따라 파일이름이 붙음
+
+절대경로와 상대경로를 나타낼 수 있음
+
+```java
+Path absolute = Paths.get("/", "where", "to");
+Path relative = Paths.get("myapp", "conf", "user.properties");
+```
+
+
+
+
+
+
+
+
+
+# 자바 OOP 큐카드
 
 
 
