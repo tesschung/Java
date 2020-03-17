@@ -4,6 +4,8 @@
 
 [생활코딩 자료정리](http://tcpschool.com/java/java_collectionFramework_stackQueue)
 
+[자바의 정석](https://www.youtube.com/user/MasterNKS)
+
 
 
 # 자바
@@ -1853,7 +1855,21 @@ public class TextFileTest {
 
 
 
+#### Reflection & Annotation
 
+Reflection? 
+
+실행시간에 객체의 내용을 조사하고, 해당 객체의 메소드를 호출할 수 있다.
+
+`Field`, `Method`, `Constructor`
+
+
+
+Annotation?
+
+@이용한 주석, 자바코드에 달아 특별한 의미를 부여한 것
+
+코드에 정보를 추가하는 정형화된 방법
 
 
 
