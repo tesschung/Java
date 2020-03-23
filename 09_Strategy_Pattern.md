@@ -123,7 +123,7 @@ public class Main {
 
 > 스트레티지 패턴 예제
 
-신작 게임에서 캐릭터와 무기를 구현해보자. 무기는 칼과 검이 있다. 칼과 검이 가지는 공통 interface를 작성한다.
+신작 게임에서 캐릭터와 무기를 구현해보자. 무기는 칼과 검이 있다. 칼과 검이 가지는 공통 interface에 추상메소드를 작성한다.
 
 *Weapon.java*
 
@@ -136,7 +136,7 @@ public interface Weapon {
 }
 ```
 
-그리고 Weapon interface를 implements하는 칼과 검을 작성한다.
+그리고 Weapon interface를 implements하는 칼과 검을 작성한다. ㅇ이때 각 클래스에 맞게 추상메소드를 Override한다.
 
 *Knife.java*
 
