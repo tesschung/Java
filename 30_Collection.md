@@ -133,8 +133,6 @@ List<E> list = new LinkedList<E>();
 
 
 
-
-
 ## Set 컬렉션
 
 저장 순서가 유지되지 않는다.
@@ -151,5 +149,74 @@ List<E> list = new LinkedList<E>();
 | 객체 삭제 | void clear()               | 저장된 모든 객체를 삭제                                      |
 |           | boolean remove(Object o)   | 주어진 객체를 삭제                                           |
 
+*인덱스로 관리하지 않아서 인덱스를 매개값으로 갖는 메소드가 없다.
 
+
+
+*Set 생성*
+
+```java
+Set<String> set = ...;
+
+// Set컬렉션은 인덱스로 가져오는 반복자가 없어서
+// 전체 객체를 대상으로 한번씩 반복해서 가져오는 반복자를 제공
+Iterator<String> iterator = set.iterator();
+```
+
+
+
+Iterator 인터페이스를 구현한 객체에서 사용할 수 있는 메소드들이다.
+
+| 리턴타입 | 메소드명  | 설명                                                         |
+| -------- | --------- | ------------------------------------------------------------ |
+| boolean  | hasNext() | 가져올 객체가 있으면 true를 리턴하고 없으면 false를 리턴한다. |
+| E        | next()    | 컬렉션에서 하나의 객체를 가져온다                            |
+| void     | remove()  | Set컬렉션에서 객체를 제거한다.                               |
+
+
+
+*Set을 looping하는 여러가지 방법*
+
+```java
+Set<String> set = new HashSet<String>();
+set.add("A");
+set.add("B");
+set.add("C");
+Iterator<String> iterator = set.iterator();
+
+// Iterator을 사용하고 looping
+while (iterator.hasNext()) { // true 라면 looping
+    String str = iterator.next();
+    System.out.println(str);
+}
+
+// Iterator을 사용하지 않고 looping
+for(String str:set) {
+    System.out.println(str);
+}
+```
+
+
+
+## HashSet
+
+`Set` interface의 구현 class이다
+
+*Hashset 생성*
+
+```java
+Set<E> set = new HashSet<E>();
+```
+
+
+
+*HashCode가 공일한 객체를 중복 저장하지 않는 내부 동작방식*
+
+(1)HashSet은 객체를 저장하기 이전에 먼저 객체의 `hashCode()` 메소드를 호출해서 **해시코드를 얻는다.**
+
+(2)이미 저장되어있는 객체들의 해시코드와 비교한다. 만약 동일한 해시코드가 있다면 `equals()` 메소드로 두 객체를 비교해서 true가 나오면 동일한 객체로 판단하고 중복 저장을 하지 않는다.
+
+
+
+## Map 컬렉션
 
