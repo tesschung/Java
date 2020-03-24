@@ -4,6 +4,8 @@
 
 
 ## 어댑터 패턴 (Adapter Pattern)
+> 연관성 없는 두 객체 묶어 사용하기
+
 한 클래스의 인터페이스를 사용하고자 하는 *다른 인터페이스로 변환할 때* 주로 사용하며, 이를 이용하면 인터페이스 호환성이 맞지 않아 같이 쓸 수 없는 클래스를 연관 관계로 연결해서 사용할 수 있게하는 패턴
 
 
@@ -17,6 +19,46 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+> 다른 예제
 
 ***FormatAdapter.java***
 
@@ -41,12 +83,6 @@ public class FormatAdapter implements MediaPlayer {
 }
 ```
 
-
-
-
-
-
-
 ```
 package adapter;
 
@@ -66,10 +102,6 @@ public class Main {
 }
 ```
 
-
-
-
-
 ```
 package adapter;
 
@@ -80,10 +112,6 @@ public interface MediaPackage {
 }
 ```
 
-
-
-
-
 ```
 package adapter;
 
@@ -93,8 +121,6 @@ public interface MediaPlayer {
    
 }
 ```
-
-
 
 ```
 package adapter;
@@ -108,8 +134,6 @@ public class MKV implements MediaPackage{
 }
 ```
 
-
-
 ```
 package adapter;
 
@@ -121,10 +145,6 @@ public class MP3 implements MediaPlayer{
    }
 }
 ```
-
-
-
-
 
 ```
 package adapter;
