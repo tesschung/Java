@@ -34,7 +34,7 @@
 
 `ArrayList`, `Vector`, `LinkedList`는 `List` interface를 구현한 Class이다.
 
-`HashSet`, `TreeSet`은 `Set` interface를 구현한 Class이다.
+`HashSet`, `TreeSet`, `LinkedHashSet`은 `Set` interface를 구현한 Class이다.
 
 `HashMap`, `HashTable`, `TreeMap`, `Properties`는 `Map` interface를 구현한 Class이다.
 
@@ -273,12 +273,168 @@ while(entryIterator.hasNext()) {
 
 ## HashMap
 
-
-
 *HashMap 생성*
 
 ```java
+// 키 타입과 값 타입을 파라미터로 주고 기본 생성자로 호출하면된다.
+Map<K, V> map = new HashMap<K, V>();
 
-
+Map<String, Integer> map = new HashMap<String, Integer>();
 ```
+
+*키와 값의 타입은 기본 타입(`byte`, `short`, `int`, `float`, `double`, `boolean`, `char`)을 사용할 수 없고, 클래스 및 인터페이스 타입만 가능
+
+
+
+## Hashtable
+
+
+
+*Vector와 유사하다.
+
+Hashtable을 사용하면 *스레드가 안전(Thread Safe)*하게할 수 있다. 즉, 동기화된 메소드로 구성되어있어서 *멀티스레드가 동시에 이 메소드를 실행할 수 없고*, 하나의 스레드가 실행을 완료해야만 다른 스레드를 실행할 수 있다. 그래서 멀티 스레드 환경에서 안전하게 객체를 추가, 삭제 할 수 있다.
+
+*Hashtable 생성*
+
+```java
+// 키 타입과 값 타입을 파라미터로 주고 기본 생성자로 호출하면된다.
+Map<K, V> map = new Hashtable<K, V>();
+
+Map<String, Integer> map = new Hashtable<String, Integer>();
+```
+
+
+
+## Properties
+
+Properties는 Hashtable의 하위 클래스이기 때문에 Hashtable의 모든 특징을 그대로 가지고 있다. 
+
+Properties는 키와 값을 `String`만 지정 가능하다.
+
+
+
+## 검색 기능을 강화시킨 컬렉션
+
+`Set` - `TreeSet`
+
+`Map` - `TreeMap`
+
+이진트리를 이용해서 계층적구조를 가지면서 객체에 저장한다.
+
+
+
+## 이진 트리 구조
+
+
+
+
+
+## TreeSet
+
+
+
+
+
+## TreeMap
+
+
+
+
+
+## Comparable 과 Comparator
+
+
+
+
+
+
+
+## 후입선출(LIFO)과 선입선출(FIFO) 컬렉션
+
+후입선출 - Stack
+
+선입선출 - Queue
+
+
+
+## Stack
+
+> 나중에 넣은 객체가 먼저 빠져나가는 자료구조
+
+*Stack 생성*
+
+```java
+Stack<E> stack = new Stack<E>();
+```
+
+| 리턴타입 | 메소드       | 설명                                                         |
+| -------- | ------------ | ------------------------------------------------------------ |
+| E        | push(E item) | 주어진 객체를 스택에 넣는다                                  |
+| E        | peek()       | 스택의 맨 위 객체를 가져온다. 객체를 스택에서 제거하지 않는다. |
+| E        | pop()        | 스택의 맨 위에서 객체를 가져온다. 객체를 스택에서 제거한다.  |
+
+```java
+Stack<String> stack = new Stack<>();
+
+stack.push("A");
+stack.push("B");
+stack.push("C");
+stack.push("D");
+
+System.out.println(stack); // [A, B, C, D]
+String out = stack.pop();
+System.out.println(out); // D
+String last = stack.peek();
+System.out.println(last); // C
+System.out.println(stack); // [A, B, C]
+```
+
+
+
+## Queue
+
+> 먼저 넣은 객체가 먼저 빠져나가는 자료구조
+
+
+
+*Stack 생성*
+
+```java
+Queue<E> queue = new LinkedList<E>();
+```
+
+*LinkedList 타입 객체를 Queue 인터페이스 타입으로 변환
+
+| 리턴타입 | 메소드       | 설명                                                         |
+| -------- | ------------ | ------------------------------------------------------------ |
+| E        | offer(E e) | 주어진 객체를 스택에 넣는다                                  |
+| E        | peek()       | 객체 하나를 가져온다. 객체를 큐에서 제거하지 않는다. |
+| E        | poll()        | 객체 하나를 가져온다. 객체를 큐에서 제거한다.  |
+
+
+
+```java
+Queue<String> queue = new LinkedList<>();
+queue.offer("A");
+queue.offer("B");
+queue.offer("C");
+queue.offer("D");
+
+System.out.println(queue); // [A, B, C, D]
+String outQ = queue.poll();
+System.out.println(outQ); // A
+String frontQ = queue.peek();
+System.out.println(frontQ); // B
+System.out.println(queue); // [B, C, D]
+```
+
+
+
+
+
+## 동기화된 컬렉션
+
+Vector와 Hashtable은 동기화된 메소드로 구성되어있어서 멀티쓰레드 환경에서도 안전하게 요소를 처리할 수 있지만 ArrayList, HashSet, HashMap의 경우에는 그렇지 않다.
+
+이러한 점을 Collection의 synchronizedXXX()메소드를 사용해서 맵핑하면 동기화된 컬렉션을 리턴한다.
 
