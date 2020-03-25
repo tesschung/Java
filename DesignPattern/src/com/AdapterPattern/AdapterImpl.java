@@ -1,7 +1,6 @@
 package com.AdapterPattern;
 
 public class AdapterImpl implements Adapter {
-
     // Adapter interface의 추상 메서드를 Override
     @Override
     public Double twiceOf(Float num) {
@@ -14,7 +13,7 @@ public class AdapterImpl implements Adapter {
 
     @Override
     public Double halfOf(Float num) {
+        System.out.println("절반 함수 호출");
         return Math.half(num);
     }
-
 }

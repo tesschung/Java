@@ -10,6 +10,8 @@
 
 
 
+*어댑터 패턴의 장점*
+
 관계가 없는 인터페이스 간 같이 사용 가능
 
 프로그램 검사 용이
@@ -18,41 +20,93 @@
 
 
 
+수의 두 배의 수를 반환: twiceOf(Float):Float
+
+수의 반(1/2)의 수를 반환: halfOf(Float):Float
+
+구현객체명 'Adapter'
+
+*Math.java* 두 배와 절반을 구하는 함수는 이미 구현되어있는 상태
+
+```java
+public class Math {
+    //두배
+    public static double twoTime(double num){return num*2;}
+    //절반
+    public static double half(double num){
+        return num/2;
+    }
+    //강화된 알고리즘
+    public static Double doubled(Double d){return d*2;}
+}
+```
 
 
 
+*Adapter.java*
+
+```java
+public interface Adapter {
+    // 원하는 기능
+    public Double twiceOf(Float num);
+    public Double halfOf(Float num);
+}
+```
 
 
 
+*AdapterImpl.java*
+
+```java
+public class AdapterImpl implements Adapter {
+    // Adapter interface의 추상 메서드를 Override
+    @Override
+    public Double twiceOf(Float num) {
+        // Math클래스의 doubled메소드에 Float num을 .doubleValue()을 사용,
+        // Double 타입으로 바꿔 파라미터로 넘겨준다.
+        // 그리고 Double바뀌어 *2로 반환된 값을 Application(호출한 클래스)에
+        // 반환한다.
+        return Math.doubled(num.doubleValue());
+    }
+
+    @Override
+    public Double halfOf(Float num) {
+        System.out.println("절반 함수 호출");
+        return Math.half(num);
+    }
+}
+```
 
 
 
+*Application.java*
+
+```java
+public class Application {
+    public static void main(String[] args) {
+        //요구사항을 수행하는 인스턴스
+        Adapter adapter = new AdapterImpl();
+        System.out.println(adapter.twiceOf(100.0f));
+        System.out.println(adapter.halfOf(100.3f));
+    }
+}
+```
 
 
 
+> number.xxxValue() 
 
+byte byteValue()
 
+Short shortValue()
 
+int intValue()
 
+long longValue()
 
+float floatValue()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+double doubleValue()
 
 
 
@@ -102,7 +156,7 @@ public class Main {
 }
 ```
 
-```
+```java
 package adapter;
 
 public interface MediaPackage {
@@ -112,7 +166,7 @@ public interface MediaPackage {
 }
 ```
 
-```
+```java
 package adapter;
 
 public interface MediaPlayer {
@@ -122,7 +176,7 @@ public interface MediaPlayer {
 }
 ```
 
-```
+```java
 package adapter;
 
 public class MKV implements MediaPackage{
@@ -134,7 +188,7 @@ public class MKV implements MediaPackage{
 }
 ```
 
-```
+```java
 package adapter;
 
 public class MP3 implements MediaPlayer{
@@ -146,7 +200,7 @@ public class MP3 implements MediaPlayer{
 }
 ```
 
-```
+```java
 package adapter;
 
 public class MP4 implements MediaPackage{
