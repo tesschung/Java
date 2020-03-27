@@ -167,37 +167,59 @@ double avg = list.stream()
 
 ## 스트림의 종류
 
+`Stream` - *객체* 요소를 처리하는 스트림
+
+`IntStream`, `LongStream`, `DoubleStream` - *기본* 타입인 int, long, double 요소를 처리하는 스트림 
+
+| 리턴 타입                           | 메소드(매개변수)                                             | 소스                                                         |
+| ----------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Stream<T>                           | java.util.Collection.stream()                                | 컬렉션                                                       |
+| Stream<T>                           | java.util.Collection.parallelStream()                        | 컬렉션                                                       |
+| Stream<T>                           | Arrays.stream(T[])  Stream.of(T[])                           | 배열                                                         |
+| IntStream                           | Arrays.stream(int[])  IntStream.of(int[])                    | 배열                                                         |
+| LongStream                          | Arrays.stream(long[]) LongStream.of(Long[])                  | 배열                                                         |
+| DoubleStream                        | Arrays.stream(double[]) DoubleStream.of(double[])            | 배열                                                         |
+| IntStream                           | IntStream.range(int, int), IntStream.rangeClosed(int, int)   | Int 범위 - rangeClosed() 메소드는 두번째 파라미터인 끝값을 포함. range()는 포함하지 않는다. |
+| LongStream                          | LongStream.range(long, long), LongStream.rangeClosed(long, long) | long 범위 - rangeClosed() 메소드는 두번째 파라미터인 끝값을 포함. range()는 포함하지 않는다. |
+| Stream<Path>                        | Files.find(Path, int, BiPredicate, FileVisitOption), Files.list(Path) | 디렉토리 - Path 경로에서 BiPredicate가 true인 Path Stream을 얻을 수 있다. |
+| Stream<String>                      | Files.lines(Path, Charset), BufferedReader.lines()           | 파일 - 한 라인에 대한 텍스트 정보를 요소가지는 Stream을 얻을 수 있다. |
+| DoubleStream, IntStream, LongStream | Random.doubles(…), Random.ints(), Random.longs()             | 랜덤수                                                       |
+
+
+
+## 컬렉션으로부터 스트림 얻기
 
 
 
 
 
+## 배열로부터 스트림 얻기
 
 
 
 
 
+## 숫자 범위로부터 스트림 얻기
 
 
 
 
 
+## 파일로부터 스트림 얻기
 
 
 
 
 
+## 디렉토리로부터 스트림 얻기
 
 
 
 
-## 파이프라인
 
-pipline
+## 중간 처리와 최종 처리
 
-- 여러개의 스트림이 연결되어 있는 구조
-
-
+스트림은 데이터의 `필터링`, `매핑`, `정렬`, `그룹핑` 등의 **중간 처리**와 `합계`, `평균`, `카운팅`, `최대값`, `최소값` 들의 **최종 처리**를 파이프라인으로 해결한다.
 
 ```java
 long count3 = myList.stream()
@@ -206,12 +228,6 @@ long count3 = myList.stream()
         .count();
 System.out.println(count3);
 ```
-
-
-
-
-
-
 
 ```java
 long count = myList.stream()
@@ -225,11 +241,21 @@ long count2 = myList.parallelStream()
 System.out.println(count2);
 ```
 
+ 
+
+
+
+## 중간 처리 메소드와 최종 처리 메소드
 
 
 
 
-#### Stream 과 Optional
+
+
+
+
+
+## Stream 과 Optional
 
 **filter연산(중간연산)**
 

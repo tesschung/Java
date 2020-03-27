@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.OptionalInt;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class LambdaExpressionExample {
@@ -31,6 +34,10 @@ public class LambdaExpressionExample {
         System.out.println(avg);
 
 
+        int[] intArray = {1, 2, 3};
+        IntStream intStream = Arrays.stream(intArray);
+        OptionalInt mySum = intStream.peek(s-> System.out.println(s)).findFirst();
+        System.out.println(mySum);
     }
 
     private static void print(String name) {
