@@ -209,6 +209,51 @@ double avg = list.stream()
 
 
 
+**Path** : 파일과 디렉터리를 나타낸다
+
+디렉터리 이름을 나타내며, 경우에 따라 파일이름이 붙음
+
+절대경로와 상대경로를 나타낼 수 있음
+
+```java
+Path absolute = Paths.get("/", "where", "to");
+Path relative = Paths.get("myapp", "conf", "user.properties");
+```
+
+
+
+```java
+import java.io.*;
+
+public class TextFileTest {
+    public TextFileTest() throws IOException {
+    }
+
+    public static void main(String[] args) throws IOException {
+        // 텍스트 파일에서 파일 읽기
+        try(BufferedReader in = new BufferedReader(
+                new FileReader("test.txt"))) {
+        String line;
+        while ((line = in.readLine()) != null) {
+            System.out.println(line);
+        }}
+        catch (FileNotFoundException fe) {
+            System.out.println("FileNotFoundException 발생");
+            }
+//        in.close(); // 자원해지
+
+        // 파일 쓰기
+        try (BufferedWriter out = new BufferedWriter(
+                new FileWriter("output.txt"))) {
+            out.write("hello world");
+        } catch (FileNotFoundException fe) {
+        System.out.println("FileNotFoundException");
+    	}
+//        out.close();
+    }
+}
+```
+
 
 
 ## 디렉토리로부터 스트림 얻기
@@ -243,19 +288,9 @@ System.out.println(count2);
 
  
 
-
-
 ## 중간 처리 메소드와 최종 처리 메소드
 
 
-
-
-
-
-
-
-
-## Stream 과 Optional
 
 **filter연산(중간연산)**
 
@@ -321,54 +356,13 @@ Collectors.toSet()
 
 
 
-#### 입력/출력 스트림
-
-데이터를 읽고 쓸 때는 스트림을 이용한다.
 
 
+## Optional 클래스
 
-**Path** : 파일과 디렉터리를 나타낸다
-
-디렉터리 이름을 나타내며, 경우에 따라 파일이름이 붙음
-
-절대경로와 상대경로를 나타낼 수 있음
-
-```java
-Path absolute = Paths.get("/", "where", "to");
-Path relative = Paths.get("myapp", "conf", "user.properties");
-```
+단순히 집계 값만 저장하는 것이 아니라, 집계 값이 존재하지 않을 경우 디폴트 값을 설정할 수 있고, 집계값을 처리하는 consumer도 등록할 수 있다.
 
 
 
-```java
-import java.io.*;
 
-public class TextFileTest {
-    public TextFileTest() throws IOException {
-    }
-
-    public static void main(String[] args) throws IOException {
-        // 텍스트 파일에서 파일 읽기
-        try(BufferedReader in = new BufferedReader(
-                new FileReader("test.txt"))) {
-        String line;
-        while ((line = in.readLine()) != null) {
-            System.out.println(line);
-        }}
-        catch (FileNotFoundException fe) {
-            System.out.println("FileNotFoundException 발생");
-            }
-//        in.close(); // 자원해지
-
-        // 파일 쓰기
-        try (BufferedWriter out = new BufferedWriter(
-                new FileWriter("output.txt"))) {
-            out.write("hello world");
-        } catch (FileNotFoundException fe) {
-        System.out.println("FileNotFoundException");
-    	}
-//        out.close();
-    }
-}
-```
 

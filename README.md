@@ -16,63 +16,9 @@
 
 [while]()
 
-[Collection](https://github.com/tesschung/Java/blob/master/30_Collection.md) 
+[Collection](https://github.com/tesschung/Java/blob/master/09_Collection.md) 
 
-[Stream](#https://github.com/tesschung/Java/blob/master/31_Stream.md)
-
-
-
-## 디자인 패턴
-
-[스트래티지 패턴 (Strategy Pattern)](https://github.com/tesschung/Java/blob/master/09_Strategy_Pattern.md)
-
-[어댑터 패턴 (Adapter Pattern)](https://github.com/tesschung/Java/blob/master/10_Adapter_Pattern.md)
-
-[템플릿 메소드 패턴]()
-
-[팩토리 메소드]()
-
-[싱글톤 패턴]()
-
-[프로토 타입 패턴]()
-
-[빌더 패턴]()
-
-[추상 팩토리 패턴]()
-
-[브릿지 패턴]()
-
-[컴포짓 패턴]()
-
-[데코레이터 패턴]()
-
-[방문자 패턴]()
-
-[책임사슬 패턴]()
-
-[퍼사드 패턴]()
-
-[옵저버 패턴]()
-
-[중재자 패턴]()
-
-[상태 패턴]()
-
-[메멘토 패턴]()
-
-[플라이웨이트 패턴]()
-
-[프록시 패턴]()
-
-[커멘드 패턴]()
-
-
-
-
-
-
-
-
+[Stream](#https://github.com/tesschung/Java/blob/master/10_Stream.md)
 
 
 
