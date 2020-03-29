@@ -38,3 +38,56 @@ BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));//선
 // bw.flush();//남아있는 데이터를 모두 출력시킴
 bw.close();//스트림을 닫음
 ```
+
+
+
+## StringTokenizer
+
+1 2
+
+3 4
+
+위 처럼 입력되는 입력을 `" "`을 기준으로 Tokenizing해준다.
+
+그리고, 앞에서 부터 `.nextToken()` 메소드로 변수에 할당 할 수 있다/순회할 수 있다.
+
+
+
+## StringBuilder
+
+String화 할 타입을 `.append()`해주면 String형식으로 차곡 차곡 쌓인다. Python에서 String에 `+`하는 식으로 쌓거나 `.join()`을 쓰던 방식과 약간 다르다. 이렇게 하면 시간이 많이 줄어든다.
+
+
+
+```java
+public class Main {
+    // Stream으로 풀어보자
+    static int N;
+    static int X;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer tokenizer1 = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(tokenizer1.nextToken());
+        X = Integer.parseInt(tokenizer1.nextToken());
+
+        String[] str = br.readLine().split(" ");
+
+        int[] array = Arrays.stream(StringArrayToIntArray(str))
+                .filter(x -> x < X )
+                .toArray();
+
+        StringBuilder sb = new StringBuilder();
+        for(int num : array) { sb.append(num).append(" "); }
+        System.out.println(sb);
+    }
+    static int[] StringArrayToIntArray(String[] stringArray)
+    {
+        return Stream.of(stringArray).mapToInt(Integer::parseInt).toArray();
+    }
+}
+
+```
+
+
+
