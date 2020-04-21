@@ -12,6 +12,101 @@
 
 
 
+## Scanner
+
+
+```java
+java.util.Scanner sc = new java.util.Scanner(System.in);
+```
+
+`short-cut`
+
+```java
+import java.util.Scanner;
+.
+.
+.
+Scanner sc = new Scanner(System.in);
+
+int num = sc.nextInt(); // 정수
+```
+
+`문자열 입력받아 출력하기`
+
+```java
+String st = sc.nextLine();
+System.out.println(st);
+
+/*
+입력: 안녕하세요 선생님
+출력: 안녕하세요 선생님
+*/
+
+String stn = sc.next();
+System.out.println(stn);
+
+/*
+입력: 안녕하세요 선생님
+출력: 안녕하세요
+*/
+```
+
+
+
+## Buffer 이해
+
+Scanner은 Buffer를 사용하기 때문에,
+
+```java
+Scanner sc = new Scanner(System.in);
+int num = sc.nextInt(); // 여기서 1 2를 입력하면
+int num1 = sc.nextInt();
+System.out.println(num+ " "+num1); // 1 2가 출력된다. Buffer때문이다.
+```
+
+ 
+
+이러한 문제를 해결하기 위해서
+
+> 방식1:
+
+```java
+Scanner sc = new Scanner(System.in);
+int num = sc.nextInt(); // 1 2 입력
+sc.nextLine();
+int num1 = sc.nextInt(); // 3 4 입력
+sc.nextLine();
+System.out.println(num+ " "+num1); // 1 3가 출력된다.
+```
+
+
+
+> 방식2: 더 많이 쓰이는 방법
+
+```java
+int num2 = Integer.parseInt(sc.nextLine());
+// 이런식으로 쓰면 위 처럼 긴 코드를 할 필요 없어진다.
+```
+
+
+
+## Random
+
+```java
+Random r = new Random();
+
+int num = r.nextInt(); // 임의의 정수(음수&양수) 추출
+System.out.println(num);
+
+int num1 = r.nextInt(10); // 0~9사이의 난수(양수) 추출
+System.out.println(num1);
+
+int num2 = r.nextInt(10)+1; // 1(0+1)~10(9+1)사이의 난수(양수) 추출
+System.out.println(num2);
+```
+
+
+
 ## *println 
 
 - **line feed**(\n, 개행문자) && **carriage return**를 가지고있다.
