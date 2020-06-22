@@ -1,0 +1,24 @@
+package kr.ac.kopo.day10.project.project10;
+
+public class Teacher extends Person{
+
+	String subject;
+	
+	public Teacher() {
+		
+	}
+	
+	public Teacher(String name, int age, String subject) {
+		this.setName(name);
+		this.setAge(age);
+		this.setSubject(subject);
+	}
+	
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	
+	public String getSubject() {
+		return subject;
+	}
+}

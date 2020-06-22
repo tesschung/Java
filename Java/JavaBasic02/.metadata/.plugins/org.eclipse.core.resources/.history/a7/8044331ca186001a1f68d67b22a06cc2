@@ -1,0 +1,14 @@
+package kr.ac.kopo.day10.project.project10;
+
+public class Employee extends Person{
+
+	private String dept;
+	
+	public Employee() {
+		
+	}
+	
+	public Employee(String name, int age, String dept) {
+		
+	}
+}

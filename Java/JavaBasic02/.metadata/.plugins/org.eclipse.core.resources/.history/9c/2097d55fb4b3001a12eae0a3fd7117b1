@@ -1,0 +1,23 @@
+package com.ProxyPattern;
+
+public class Proxy implements Subject{
+	
+	private Subject real;
+	
+	public Proxy() {
+		real = new RealSubject();
+	}
+	
+	
+	@Override
+	public void action1() {
+		System.out.println("간단한 업무 by 실제 proxy");
+	}
+
+	@Override
+	public void action2() {
+		this.real.action2();
+	}
+
+	
+}

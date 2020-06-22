@@ -1,0 +1,5 @@
+package com.CommandPattern;
+
+public class Command {
+
+}

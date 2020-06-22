@@ -1,0 +1,8 @@
+package kr.ac.kopo.day10.project.project03;
+
+public class Common {
+
+	public static void main(String[] args) {
+		
+	}
+}

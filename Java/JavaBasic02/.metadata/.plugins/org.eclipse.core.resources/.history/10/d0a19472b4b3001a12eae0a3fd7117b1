@@ -1,0 +1,11 @@
+package com.ProxyPattern;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Subject real = new RealSubject();
+		Subject proxy = new Proxy();
+	}
+	
+}

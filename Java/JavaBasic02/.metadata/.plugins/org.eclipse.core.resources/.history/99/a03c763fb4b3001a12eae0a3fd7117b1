@@ -1,0 +1,6 @@
+package com.ProxyPattern;
+
+public class Proxy implements Subject{
+
+	
+}

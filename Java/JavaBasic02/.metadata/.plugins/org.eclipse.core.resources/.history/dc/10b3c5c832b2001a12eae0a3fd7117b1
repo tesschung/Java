@@ -1,0 +1,28 @@
+package com.MediatorPattern;
+
+public class Application {
+	public static void main(String[] args) {
+		System.out.println("start");
+		
+		Mediator mediator = new ChatMediator();
+		
+		System.out.println("start");
+		
+		Colleague colleague1 = new ChatColleague();
+		Colleague colleague2 = new ChatColleague();
+		Colleague colleague3 = new ChatColleague();
+		
+		System.out.println("start");
+		
+		colleague1.join(mediator);
+		colleague2.join(mediator);
+		colleague3.join(mediator);
+		
+		System.out.println("start");
+		
+		colleague1.sendData("AAA");
+		colleague2.sendData("BBB");
+		colleague3.sendData("CCC");
+	}
+
+}

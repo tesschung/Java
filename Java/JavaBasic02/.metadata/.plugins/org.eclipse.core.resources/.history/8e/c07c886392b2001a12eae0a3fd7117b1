@@ -1,0 +1,11 @@
+package com.FlyweightPattern;
+
+public class Main {
+	public static void main(String[] args) {
+		FlyWeightFactory factory = new FlyWeightFactory();
+		FlyWeight flyWeight = factory.getFlyWeight("a");
+		
+		FlyWeight flyWeight = factory.getFlyWeight("a");
+	}
+
+}

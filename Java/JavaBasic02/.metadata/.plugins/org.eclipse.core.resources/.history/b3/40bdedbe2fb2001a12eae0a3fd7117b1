@@ -1,0 +1,10 @@
+package com.MediatorPattern;
+
+import java.util.List;
+
+public abstract class Mediator {
+	
+	private List<Colleague> colleagues;
+	
+	
+}

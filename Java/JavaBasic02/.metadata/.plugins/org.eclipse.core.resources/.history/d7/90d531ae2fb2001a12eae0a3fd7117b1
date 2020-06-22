@@ -1,0 +1,7 @@
+package com.MediatorPattern;
+
+public abstract class Mediator {
+	
+	
+	
+}

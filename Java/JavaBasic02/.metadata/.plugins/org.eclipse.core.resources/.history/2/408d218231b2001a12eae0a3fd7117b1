@@ -1,0 +1,11 @@
+package com.MediatorPattern;
+
+public class ChatColleague extends Colleague{
+
+	@Override
+	public void handle(String data) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

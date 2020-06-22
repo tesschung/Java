@@ -1,0 +1,5 @@
+package com.MediatorPattern;
+
+public class Application {
+
+}

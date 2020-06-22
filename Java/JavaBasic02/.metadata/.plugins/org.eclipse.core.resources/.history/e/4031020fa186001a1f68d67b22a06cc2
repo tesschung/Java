@@ -1,0 +1,5 @@
+package kr.ac.kopo.day10.project.project10;
+
+public class Teacher extends Person{
+
+}

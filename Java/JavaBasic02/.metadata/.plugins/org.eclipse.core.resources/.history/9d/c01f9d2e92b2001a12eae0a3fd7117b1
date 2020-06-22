@@ -1,0 +1,19 @@
+package com.FlyweightPattern;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+public class FlyWeightFactory {
+
+	Map<String, FlyWeight> pool;
+	
+	public FlyWeightFactory() {
+		pool = new TreeMap<>();
+	}
+	
+	public FlyWeight getFlyWeight(String key) {
+		FlyWeight flyWeight = pool.get(key);
+		
+		return null;
+	}
+}

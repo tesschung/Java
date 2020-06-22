@@ -1,0 +1,5 @@
+package com.MediatorPattern;
+
+public abstract class Colleague {
+
+}

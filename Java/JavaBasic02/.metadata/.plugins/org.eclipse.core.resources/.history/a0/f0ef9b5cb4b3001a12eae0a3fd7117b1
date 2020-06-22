@@ -1,0 +1,25 @@
+package com.ProxyPattern;
+
+public class Proxy implements Subject{
+	
+	private Subject real;
+	
+	public Proxy() {
+		real = new RealSubject();
+	}
+	
+	
+	@Override
+	public void action1() {
+		System.out.println("간단한 업무");
+	}
+
+	@Override
+	public void action2() {
+		System.out.println("복잡한 업무");
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ee869ffe-6dc4-47b3-94ef-621eaf89b270" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1YNAEWu2ozxKs2zSjlE8XuJezLH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager" selected="Application.CardDriver">
+    <configuration name="ArrayListExam" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ArrayListExam" />
+      <module name="JavaBasic" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CardDriver" />
+      <module name="JavaBasic" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DictionaryDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DictionaryDriver" />
+      <module name="JavaBasic" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HashMapPrac" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HashMapPrac" />
+      <module name="JavaBasic" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PokeDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PokeDriver" />
+      <module name="JavaBasic" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CardDriver" />
+        <item itemvalue="Application.PokeDriver" />
+        <item itemvalue="Application.DictionaryDriver" />
+        <item itemvalue="Application.HashMapPrac" />
+        <item itemvalue="Application.ArrayListExam" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ee869ffe-6dc4-47b3-94ef-621eaf89b270" name="Default Changelist" comment="" />
+      <created>1582772566365</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582772566365</updated>
+      <workItem from="1582772567630" duration="11299000" />
+      <workItem from="1583059504203" duration="21772000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="874" y="159" key="#com.intellij.ide.util.MemberChooser" timestamp="1583590676804">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state x="874" y="159" key="#com.intellij.ide.util.MemberChooser/0.23.1440.836@0.23.1440.836" timestamp="1583590676804" />
+    <state x="784" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583317142611">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="784" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.830@0.23.1440.830" timestamp="1583317142611" />
+    <state width="715" height="171" key="GridCell.Tab.0.bottom" timestamp="1583591564047">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state width="715" height="171" key="GridCell.Tab.0.bottom/0.23.1440.830@0.23.1440.830" timestamp="1583496087541" />
+    <state width="715" height="171" key="GridCell.Tab.0.bottom/0.23.1440.836@0.23.1440.836" timestamp="1583591564047" />
+    <state width="715" height="171" key="GridCell.Tab.0.center" timestamp="1583591564047">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state width="715" height="171" key="GridCell.Tab.0.center/0.23.1440.830@0.23.1440.830" timestamp="1583496087541" />
+    <state width="715" height="171" key="GridCell.Tab.0.center/0.23.1440.836@0.23.1440.836" timestamp="1583591564047" />
+    <state width="715" height="171" key="GridCell.Tab.0.left" timestamp="1583591564046">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state width="715" height="171" key="GridCell.Tab.0.left/0.23.1440.830@0.23.1440.830" timestamp="1583496087541" />
+    <state width="715" height="171" key="GridCell.Tab.0.left/0.23.1440.836@0.23.1440.836" timestamp="1583591564046" />
+    <state width="715" height="171" key="GridCell.Tab.0.right" timestamp="1583591564047">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state width="715" height="171" key="GridCell.Tab.0.right/0.23.1440.830@0.23.1440.830" timestamp="1583496087541" />
+    <state width="715" height="171" key="GridCell.Tab.0.right/0.23.1440.836@0.23.1440.836" timestamp="1583591564047" />
+    <state x="442" y="279" key="com.intellij.ide.util.TipDialog" timestamp="1583059511452">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="442" y="279" key="com.intellij.ide.util.TipDialog/0.23.1440.830@0.23.1440.830" timestamp="1583059511452" />
+    <state x="788" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583496277775">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="788" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.830@0.23.1440.830" timestamp="1583496277775" />
+    <state x="670" y="177" width="670" height="676" key="search.everywhere.popup" timestamp="1583505489972">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="670" y="177" width="670" height="676" key="search.everywhere.popup/0.23.1440.830@0.23.1440.830" timestamp="1583505489972" />
+  </component>
+</project>

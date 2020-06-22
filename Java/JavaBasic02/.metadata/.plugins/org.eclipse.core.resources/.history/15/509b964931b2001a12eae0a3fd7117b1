@@ -1,0 +1,22 @@
+package com.MediatorPattern;
+
+import java.util.List;
+
+public abstract class Mediator {
+	
+	private List<Colleague> colleagues; // colleague의 리스트를 가지고 있어야 중재할 대상을 얻는다.
+	
+	public boolean addColleague(Colleague colleague) {
+		
+		if (colleague != null) {
+			return colleagues.add(colleague); // return true
+		} else {
+			return false;
+		}
+		
+	}
+	
+	
+	public abstract void mediate(String data);
+	
+}

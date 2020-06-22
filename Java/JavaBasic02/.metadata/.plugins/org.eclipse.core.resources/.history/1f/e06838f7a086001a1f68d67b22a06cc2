@@ -1,0 +1,14 @@
+package kr.ac.kopo.day10.project.project10;
+
+public class Student extends Person{
+
+	int id;
+	
+	public Student() {
+		
+	}
+	
+	public Student(String name, int age, int id) {
+		
+	}
+}
